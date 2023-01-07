@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,19 +7,23 @@ using UnityEngine.Rendering.Universal;
 
 namespace Architecture.Hazards
 {
+    [
+        RequireComponent(typeof(BoxCollider2D)),
+        //RequireComponent(typeof(Rigidbody2D))
+    ]
     public class Animal : MonoBehaviour
     {
+        public static Vector4 MoveBounds { get; set; } = Vector4.zero;
+
         [Header("Movement Variables")]
         [SerializeField, Min(0)] float moveSpeed = 1f;
-        [SerializeField, Min(0)] float rotationSpeed = 1f;
+        [SerializeField, Min(0)] float rotationSpeed = 7f;
 
-        [SerializeField, Min(0)] float minTimeToMove = 0f;
-        [SerializeField, Min(0)] float maxTimeToMove = 1f;
+        [SerializeField, Min(0), Tooltip("In seconds")] float minTimeToMove = 0f;
+        [SerializeField, Min(0), Tooltip("In seconds")] float maxTimeToMove = 10f;
 
-        [SerializeField, Min(0)] float minMoveDistance = 0f;
-        [SerializeField, Min(0)] float maxMoveDistance = 0f;
-
-        Vector2 targetPosition;
+        [SerializeField, Min(0), Tooltip("In world units")] float minMoveDistance = 10f;
+        [SerializeField, Min(0), Tooltip("In world units")] float maxMoveDistance = 100f;
 
         [Header("Particle Effects")]
         [SerializeField] ParticleSystem bloodPFX;
@@ -28,6 +33,11 @@ namespace Architecture.Hazards
         [SerializeField] SpriteRenderer spriteRenderer;
         [SerializeField] BoxCollider2D boxCol;
         [SerializeField] ShadowCaster2D shadowCaster;
+
+        private static float stoppingThreshold = 1f;
+
+        Vector3 targetPosition;
+        bool moving = false;
 
         private void Start()
         {
@@ -39,15 +49,51 @@ namespace Architecture.Hazards
                 throw new System.ArgumentException("Max cannot be smaller than min.");
             }
 #endif
+
+            StartCoroutine(WaitForNextMovement());
+        }
+
+        private void Update()
+        {
+            if ((targetPosition - transform.position).magnitude < stoppingThreshold && moving)
+            {
+                moving = false;
+                StartCoroutine(WaitForNextMovement());
+            }
         }
 
         private void FixedUpdate()
         {
-
+            if (moving)
+            {
+                transform.Translate(
+                    (targetPosition - transform.position).normalized 
+                    * Mathf.Clamp((targetPosition - transform.position).magnitude, 0, moveSpeed),
+                    transform.parent
+                );
+            } else
+            {
+                transform.Rotate(new Vector3(0, 0, rotationSpeed));
+            }
         }
 
-        IEnumerator WaitForNextMovement() { 
-            yield return new WaitForSeconds(Random.Range(minTimeToMove, maxTimeToMove));
+        IEnumerator WaitForNextMovement() {
+            Debug.Log("Nigger");
+            yield return new WaitForSeconds(UnityEngine.Random.Range(minTimeToMove, maxTimeToMove));
+            moveToNewPosition();
+        }
+
+        void moveToNewPosition()
+        {
+            float directionToMove = UnityEngine.Random.Range(0, Mathf.PI * 2);
+            float distanceToMove = UnityEngine.Random.Range(minMoveDistance, maxMoveDistance);
+
+            moving = true;
+            targetPosition = new Vector3(
+                Mathf.Clamp(Mathf.Cos(directionToMove) * distanceToMove, MoveBounds.x, MoveBounds.z),
+                Mathf.Clamp(Mathf.Sin(directionToMove) * distanceToMove, MoveBounds.y, MoveBounds.w),
+                0
+            );
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
