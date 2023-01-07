@@ -12600,8 +12600,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 949425a334ee832458d5a2ee9effe27e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wheatTileMap: {fileID: 1739770292}
   grid: {fileID: 299700944}
+  harvestedWheatTile: {fileID: 0}
 --- !u!61 &1739770295
 BoxCollider2D:
   m_ObjectHideFlags: 0
