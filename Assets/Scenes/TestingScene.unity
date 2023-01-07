@@ -380,10 +380,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 522473514}
+  - component: {fileID: 522473517}
+  - component: {fileID: 522473518}
   - component: {fileID: 522473513}
   - component: {fileID: 522473515}
   - component: {fileID: 522473516}
-  - component: {fileID: 522473517}
   m_Layer: 0
   m_Name: test_harvester
   m_TagString: Untagged
@@ -471,6 +472,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 522473517}
+  wheatTileMap: {fileID: 1739770292}
+  dirtTile: {fileID: 11400000, guid: 73c0e3792be4b6445be0a02eb6a3e206, type: 2}
 --- !u!114 &522473516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,7 +576,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 522473512}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -586,6 +589,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &522473518
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522473512}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10, y: 15}
+    newSize: {x: 10, y: 15}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10, y: 15}
+  m_EdgeRadius: 0
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -8052,6 +8081,8 @@ GameObject:
   - component: {fileID: 1739770290}
   - component: {fileID: 1739770292}
   - component: {fileID: 1739770291}
+  - component: {fileID: 1739770293}
+  - component: {fileID: 1739770294}
   m_Layer: 0
   m_Name: Tilemap_Wheat
   m_TagString: Wheat
@@ -12505,3 +12536,31 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1739770293
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739770289}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
+--- !u!114 &1739770294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739770289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 949425a334ee832458d5a2ee9effe27e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
