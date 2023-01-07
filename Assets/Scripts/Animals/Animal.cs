@@ -80,10 +80,10 @@ namespace Architecture.Hazards
         IEnumerator WaitForNextMovement() {
             Debug.Log("Nigger");
             yield return new WaitForSeconds(UnityEngine.Random.Range(minTimeToMove, maxTimeToMove));
-            moveToNewPosition();
+            MoveToNewPosition();
         }
 
-        void moveToNewPosition()
+        void MoveToNewPosition()
         {
             float directionToMove = UnityEngine.Random.Range(0, Mathf.PI * 2);
             float distanceToMove = UnityEngine.Random.Range(minMoveDistance, maxMoveDistance);
