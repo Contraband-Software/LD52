@@ -9770,7 +9770,7 @@ GameObject:
   m_Layer: 0
   m_Name: Cow
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2800000, guid: c9669d8bd6615e646b0704bc3a348779, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
@@ -9924,7 +9924,7 @@ MonoBehaviour:
   - {x: -0.20156366, y: -1.8597196, z: 0}
   m_ShapePathHash: 1079842203
   m_Mesh: {fileID: 0}
-  m_InstanceId: -428364
+  m_InstanceId: 46780
 --- !u!114 &660701970109989088
 MonoBehaviour:
   m_ObjectHideFlags: 0
