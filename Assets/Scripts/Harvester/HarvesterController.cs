@@ -4,8 +4,10 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
 
-namespace Harvester
+namespace Architecture.Harvester
 {
+    using Wheat;
+
     public class HarvesterController : MonoBehaviour
     {
         public Vector2 topLeftGrid;

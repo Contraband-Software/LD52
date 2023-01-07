@@ -960,7 +960,7 @@ TextureImporter:
       name: GroundTilesCorrectSize_40
       rect:
         serializedVersion: 2
-        x: 64
+        x: 16
         y: 48
         width: 8
         height: 8
@@ -981,7 +981,7 @@ TextureImporter:
       name: GroundTilesCorrectSize_41
       rect:
         serializedVersion: 2
-        x: 72
+        x: 64
         y: 48
         width: 8
         height: 8
@@ -998,6 +998,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: GroundTilesCorrectSize_42
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 48
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10725f90cdbc4e648b77befba82970fb
+      internalID: -648773909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1009,46 +1030,47 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      GroundTilesCorrectSize_22: 1793214240
+      GroundTilesCorrectSize_23: 469455717
+      GroundTilesCorrectSize_20: 205235414
+      GroundTilesCorrectSize_41: -478493208
+      GroundTilesCorrectSize_17: 1067370585
+      GroundTilesCorrectSize_5: -1823362737
+      GroundTilesCorrectSize_37: -671394549
+      GroundTilesCorrectSize_12: -1479566295
+      GroundTilesCorrectSize_14: 670767409
+      GroundTilesCorrectSize_18: 2063126294
+      GroundTilesCorrectSize_4: 1735622208
+      GroundTilesCorrectSize_35: 30484947
+      GroundTilesCorrectSize_27: 2011789858
+      GroundTilesCorrectSize_19: 189252347
+      GroundTilesCorrectSize_42: -648773909
+      GroundTilesCorrectSize_32: -317545317
       GroundTilesCorrectSize_24: -1640481611
       GroundTilesCorrectSize_28: -514954894
       GroundTilesCorrectSize_1: 2118152527
-      GroundTilesCorrectSize_22: 1793214240
       GroundTilesCorrectSize_29: 1487256113
-      GroundTilesCorrectSize_23: 469455717
       GroundTilesCorrectSize_38: -1146789335
-      GroundTilesCorrectSize_20: 205235414
       GroundTilesCorrectSize_3: 1155800689
       GroundTilesCorrectSize_8: -835630056
-      GroundTilesCorrectSize_17: 1067370585
-      GroundTilesCorrectSize_5: -1823362737
+      GroundTilesCorrectSize_26: -2145673147
       GroundTilesCorrectSize_39: 2001318656
       GroundTilesCorrectSize_10: 1865997978
-      GroundTilesCorrectSize_37: -671394549
-      GroundTilesCorrectSize_41: -478493208
       GroundTilesCorrectSize_13: 441009433
-      GroundTilesCorrectSize_12: -1479566295
       GroundTilesCorrectSize_33: -1947382751
-      GroundTilesCorrectSize_26: -2145673147
       GroundTilesCorrectSize_15: -409493645
-      GroundTilesCorrectSize_14: 670767409
       GroundTilesCorrectSize_9: 1755186481
-      GroundTilesCorrectSize_18: 2063126294
       GroundTilesCorrectSize_11: -1712799282
-      GroundTilesCorrectSize_4: 1735622208
       GroundTilesCorrectSize_36: 401174170
-      GroundTilesCorrectSize_35: 30484947
       GroundTilesCorrectSize_21: 798499922
       GroundTilesCorrectSize_25: 543482306
       GroundTilesCorrectSize_30: 1553555868
-      GroundTilesCorrectSize_27: 2011789858
-      GroundTilesCorrectSize_6: -2014400170
-      GroundTilesCorrectSize_19: 189252347
-      GroundTilesCorrectSize_16: -138545767
       GroundTilesCorrectSize_40: 488640592
+      GroundTilesCorrectSize_6: -2014400170
+      GroundTilesCorrectSize_34: -519433350
+      GroundTilesCorrectSize_16: -138545767
       GroundTilesCorrectSize_0: -9555582
       GroundTilesCorrectSize_2: 139931056
-      GroundTilesCorrectSize_32: -317545317
-      GroundTilesCorrectSize_34: -519433350
       GroundTilesCorrectSize_31: -2083150948
       GroundTilesCorrectSize_7: 323675522
   spritePackingTag: 
