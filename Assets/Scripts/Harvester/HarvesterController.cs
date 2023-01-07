@@ -83,7 +83,7 @@ namespace Harvester
                         if(hit)
                         {
                             wheatCollisionScript.DeleteWheatTileAtCoordinate(probeCoordinate);
-                            bladePFXController.PlayHarvestPFX();
+                            bladePFXController.PlayHarvestPFX(centreOfTile);
                         }
                     }
                 }

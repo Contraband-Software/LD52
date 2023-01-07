@@ -16,6 +16,11 @@ public class BladePFX : MonoBehaviour
 
     public void PlayPFX(Vector2 positionToMoveTo)
     {
-
+        currentPlayingPFX = true;
+        gameObject.transform.position = positionToMoveTo;
+    }
+    public void OnParticleSystemStopped()
+    {
+        currentPlayingPFX = false;
     }
 }

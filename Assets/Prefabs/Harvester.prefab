@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a440a6dae08c7f9448f6e0bc31c323e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pfx: {fileID: 0}
+  currentPlayingPFX: 0
 --- !u!198 &38308643
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -4871,6 +4873,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a440a6dae08c7f9448f6e0bc31c323e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pfx: {fileID: 0}
+  currentPlayingPFX: 0
 --- !u!198 &191762303
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -9696,6 +9700,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a440a6dae08c7f9448f6e0bc31c323e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pfx: {fileID: 0}
+  currentPlayingPFX: 0
 --- !u!198 &267925373
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -14521,6 +14527,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a440a6dae08c7f9448f6e0bc31c323e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pfx: {fileID: 0}
+  currentPlayingPFX: 0
 --- !u!198 &330092684
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -19346,6 +19354,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a440a6dae08c7f9448f6e0bc31c323e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pfx: {fileID: 0}
+  currentPlayingPFX: 0
 --- !u!198 &872347058
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -24171,6 +24181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a440a6dae08c7f9448f6e0bc31c323e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pfx: {fileID: 0}
+  currentPlayingPFX: 0
 --- !u!198 &1036882341
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -28996,6 +29008,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a440a6dae08c7f9448f6e0bc31c323e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pfx: {fileID: 0}
+  currentPlayingPFX: 0
 --- !u!198 &1176718285
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -33886,6 +33900,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a440a6dae08c7f9448f6e0bc31c323e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pfx: {fileID: 0}
+  currentPlayingPFX: 0
 --- !u!198 &1265629251
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -38711,6 +38727,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a440a6dae08c7f9448f6e0bc31c323e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pfx: {fileID: 0}
+  currentPlayingPFX: 0
 --- !u!198 &1355076129
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -43536,6 +43554,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a440a6dae08c7f9448f6e0bc31c323e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pfx: {fileID: 0}
+  currentPlayingPFX: 0
 --- !u!198 &1398360144
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -48553,6 +48573,7 @@ MonoBehaviour:
   collideOnlyWithHarvesterBlade:
     serializedVersion: 2
     m_Bits: 128
+  bladePFXController: {fileID: 1228983647}
 --- !u!114 &7873533908172215103
 MonoBehaviour:
   m_ObjectHideFlags: 0

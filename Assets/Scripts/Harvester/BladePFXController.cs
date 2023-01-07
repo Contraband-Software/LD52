@@ -9,9 +9,18 @@ public class BladePFXController : MonoBehaviour
 
     [SerializeField] List<BladePFX> pfxList = new List<BladePFX>();
 
-    public void PlayHarvestPFX()
+    /// <summary>
+    /// Plays a harvesting effect at the point where wheat was cut
+    /// </summary>
+    public void PlayHarvestPFX(Vector2 wheatPosition)
     {
-
+        foreach(BladePFX bpfx in pfxList)
+        {
+            if (!bpfx.currentPlayingPFX)
+            {
+                bpfx.PlayPFX(wheatPosition);
+            }
+        }
     }
     
 }
