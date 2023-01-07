@@ -51,9 +51,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaMultiply: 9.06
+    - _AlphaMultiply: 11.1
     - _Layer1Scale: 10
-    - _Pixelation: 69.2
+    - _Pixelation: 121.56
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Scale1: 1.1
