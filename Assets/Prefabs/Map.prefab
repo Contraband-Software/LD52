@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 833427298253892993}
   - component: {fileID: 3185429611281937236}
   - component: {fileID: 4110032808417510101}
+  - component: {fileID: 4385119091797272947}
   m_Layer: 0
   m_Name: Tilemap_HarvestedWheat
   m_TagString: Wheat
@@ -308,6 +309,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 36, y: 12}
   m_EdgeRadius: 0
+--- !u!156049354 &4385119091797272947
+Grid:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057714783767279007}
+  m_Enabled: 1
+  m_CellSize: {x: 1, y: 1, z: 1}
+  m_CellGap: {x: 0, y: 0, z: 0}
+  m_CellLayout: 0
+  m_CellSwizzle: 0
 --- !u!1 &4768176160946699691
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,6 +367,7 @@ GameObject:
   - component: {fileID: 4768176161150930582}
   - component: {fileID: 4768176161150930584}
   - component: {fileID: 4768176161150930585}
+  - component: {fileID: 3473995788189136852}
   m_Layer: 0
   m_Name: Tilemap_Wheat
   m_TagString: Wheat
@@ -7847,6 +7861,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 36, y: 12}
   m_EdgeRadius: 0
+--- !u!156049354 &3473995788189136852
+Grid:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4768176161150930591}
+  m_Enabled: 1
+  m_CellSize: {x: 1, y: 1, z: 1}
+  m_CellGap: {x: 0, y: 0, z: 0}
+  m_CellLayout: 0
+  m_CellSwizzle: 0
 --- !u!1 &4768176161237209993
 GameObject:
   m_ObjectHideFlags: 0

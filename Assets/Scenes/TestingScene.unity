@@ -744,6 +744,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10, y: 12.628857}
   m_EdgeRadius: 0
+--- !u!114 &592978655 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4596241911024276234, guid: 6490d75fec24bde4db1e6aafc8599889, type: 3}
+  m_PrefabInstance: {fileID: 4768176161560839982}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &955508935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,6 +1220,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1027655110771561977, guid: 6490d75fec24bde4db1e6aafc8599889, type: 3}
+      propertyPath: shadowCaster
+      value: 
+      objectReference: {fileID: 592978655}
     - target: {fileID: 4768176161849923041, guid: 6490d75fec24bde4db1e6aafc8599889, type: 3}
       propertyPath: m_Name
       value: Map
