@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class BladePFXController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //This script will find place a particle effect
+    //where grass was cut, by selecting a PFX not currently playing
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] List<BladePFX> pfxList = new List<BladePFX>();
+
+    public void PlayHarvestPFX()
     {
-        
+
     }
+    
 }

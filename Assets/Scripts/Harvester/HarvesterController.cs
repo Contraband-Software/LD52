@@ -19,6 +19,9 @@ namespace Harvester
         [SerializeField] WheatCollision wheatCollisionScript;
         [SerializeField] LayerMask collideOnlyWithHarvesterBlade;
 
+        [Header("Particle Effects")]
+        [SerializeField] BladePFXController bladePFXController;
+
         private float horizontal;
         private float vertical;
         private float speed = 8f;
@@ -80,6 +83,7 @@ namespace Harvester
                         if(hit)
                         {
                             wheatCollisionScript.DeleteWheatTileAtCoordinate(probeCoordinate);
+                            bladePFXController.PlayHarvestPFX();
                         }
                     }
                 }
