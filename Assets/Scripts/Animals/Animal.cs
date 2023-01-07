@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Scripting.APIUpdating;
+using UnityEngine.Rendering.Universal;
 
 namespace Architecture.Hazards
 {
@@ -21,6 +23,11 @@ namespace Architecture.Hazards
         [Header("Particle Effects")]
         [SerializeField] ParticleSystem bloodPFX;
         [SerializeField] ParticleSystem intestinesPFX;
+
+        [Header("Self Component References")]
+        [SerializeField] SpriteRenderer spriteRenderer;
+        [SerializeField] BoxCollider2D boxCol;
+        [SerializeField] ShadowCaster2D shadowCaster;
 
         private void Start()
         {
@@ -47,6 +54,10 @@ namespace Architecture.Hazards
         {
             if(collision.collider.gameObject.tag == "HarvesterBlade")
             {
+                spriteRenderer.enabled = false;
+                boxCol.enabled = false;
+                shadowCaster.enabled = false;
+                
                 bloodPFX.Play();
                 intestinesPFX.Play();
             }
