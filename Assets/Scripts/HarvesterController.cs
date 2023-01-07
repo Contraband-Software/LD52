@@ -75,7 +75,8 @@ namespace Harvester
                     {
                         //do a point cast to see if it collides with the blades
                         //point cast from centre of tile (+0.5), do later
-                        RaycastHit2D hit = Physics2D.Raycast(probeCoordinate, Vector2.up, 0f, collideOnlyWithHarvesterBlade);
+                        Vector2 centreOfTile = new Vector2(probeCoordinate.x + 0.5f, probeCoordinate.y - 0.5f);
+                        RaycastHit2D hit = Physics2D.Raycast(centreOfTile, Vector2.up, 0f, collideOnlyWithHarvesterBlade);
                         if(hit)
                         {
                             wheatCollisionScript.DeleteWheatTileAtCoordinate(probeCoordinate);

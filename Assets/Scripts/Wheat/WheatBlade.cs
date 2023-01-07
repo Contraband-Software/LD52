@@ -61,7 +61,7 @@ namespace Architecture.Wheat
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.collider.transform.gameObject.tag == "Player")
+            if (collision.collider.transform.gameObject.tag == "HarvesterBlade")
             {
                 Destroy(transform.parent.gameObject);
             }
