@@ -35,6 +35,7 @@ namespace Architecture.Hazards
         [SerializeField] ShadowCaster2D shadowCaster;
 
         private static float stoppingThreshold = 1f;
+        private static float shakeAngle = 0.2f;
 
         Vector3 targetPosition;
         bool moving = false;
@@ -73,7 +74,7 @@ namespace Architecture.Hazards
                 );
             } else
             {
-                transform.Rotate(new Vector3(0, 0, rotationSpeed));
+                transform.Rotate(new Vector3(0, 0, shakeAngle * Mathf.Sin(rotationSpeed + Time.fixedTime)));
             }
         }
 
