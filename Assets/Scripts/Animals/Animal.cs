@@ -62,10 +62,5 @@ namespace Architecture.Hazards
                 intestinesPFX.Play();
             }
         }
-
-        public void OnParticleSystemStopped()
-        {
-            Destroy(gameObject);
-        }
     }
 }
