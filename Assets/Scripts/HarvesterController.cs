@@ -33,8 +33,8 @@ public class HarvesterController : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        print("balls");
+        //print("balls");
         List<ContactPoint2D> contacts = new List<ContactPoint2D>();
-        print(collision.GetContacts(contacts));
+        //print(collision.GetContacts(contacts));
     }
 }
