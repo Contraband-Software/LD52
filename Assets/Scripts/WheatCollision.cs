@@ -1,25 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
+[RequireComponent(typeof(Tilemap))]
 public class WheatCollision : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] Tilemap wheatTileMap;
+    [SerializeField] GridLayout grid;
+    [SerializeField] Tile wheatTile;
+    [SerializeField] Tile dirtTile;
+
+    public static void CheckTileAtCoordinate(Vector2 worldPosition)
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Checks if a wheat tile is present at the provided coordinate
+    /// </summary>
+    /// <param name="worldPosition"></param>
+    /// <returns></returns>
+    public bool IsWheatTilePresent(Vector2 worldPosition)
     {
-        
+        Vector3Int tilePos = grid.WorldToCell(worldPosition);
+        if(wheatTileMap.GetTile<Tile>(tilePos) != null){ return true; }
+        return false;
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void DeleteWheatTileAtCoordinate(Vector2 worldPosition)
     {
-        print("balls2");
-        List<ContactPoint2D> contacts = new List<ContactPoint2D>();
-        print(collision.GetContacts(contacts));
+        Vector3Int tilePos = grid.WorldToCell(worldPosition);
+        wheatTileMap.SetTile(tilePos, null);
     }
 }
