@@ -13,7 +13,7 @@ namespace Architecture.Wheat
         [SerializeField] GameObject wheatBladePrefab;
 
         [Header("Settings")]
-        [SerializeField, Min(0)] uint amount = 10;
+        [SerializeField, Min(0)] uint amount = 250;
         [SerializeField, Min(0)] float wheatDirectionForce = 5.0f;
         [SerializeField, Range(0, Mathf.PI)] float leftAngleLimit = 0.2f;
         [SerializeField, Range(0, Mathf.PI)] float rightAngleLimit = 0.2f;

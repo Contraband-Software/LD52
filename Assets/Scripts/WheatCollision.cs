@@ -8,8 +8,8 @@ public class WheatCollision : MonoBehaviour
 {
     [SerializeField] Tilemap wheatTileMap;
     [SerializeField] GridLayout grid;
-    [SerializeField] Tile wheatTile;
-    [SerializeField] Tile dirtTile;
+    //[SerializeField] Tile[] wheatTiles;
+    //[SerializeField] Tile dirtTile;
 
     public static void CheckTileAtCoordinate(Vector2 worldPosition)
     {
@@ -24,7 +24,7 @@ public class WheatCollision : MonoBehaviour
     public bool IsWheatTilePresent(Vector2 worldPosition)
     {
         Vector3Int tilePos = grid.WorldToCell(worldPosition);
-        if(wheatTileMap.GetTile<Tile>(tilePos) != null){ return true; }
+        if(wheatTileMap.GetTile<TileBase>(tilePos) != null){ return true; }
         return false;
     }
 

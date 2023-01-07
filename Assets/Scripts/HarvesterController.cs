@@ -58,7 +58,7 @@ namespace Harvester
             Vector2 bottomRight = new Vector2(rightX, bottomY);
 
             Vector2 topLeftGridCell = new Vector2(Mathf.Round(topLeft.x), Mathf.Round(topLeft.y));
-            print(wheatCollisionScript.IsWheatTilePresent(topLeftGridCell));
+            //print(wheatCollisionScript.IsWheatTilePresent(topLeftGridCell));
 
 
             topLeftGrid = topLeftGridCell;
