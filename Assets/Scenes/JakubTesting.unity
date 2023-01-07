@@ -12812,6 +12812,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 879082865}
     - target: {fileID: 660701970109989094, guid: 8a1f8eecd17d97544841d4439095cbd7, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 660701970109989094, guid: 8a1f8eecd17d97544841d4439095cbd7, type: 3}
       propertyPath: m_Name
       value: Cow
       objectReference: {fileID: 0}
@@ -12828,6 +12832,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 38308640, guid: 18bdabf4576b9ff4d85a96d8a082a09d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 267925370, guid: 18bdabf4576b9ff4d85a96d8a082a09d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 330092681, guid: 18bdabf4576b9ff4d85a96d8a082a09d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 1228983646, guid: 18bdabf4576b9ff4d85a96d8a082a09d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1398360141, guid: 18bdabf4576b9ff4d85a96d8a082a09d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.09
+      objectReference: {fileID: 0}
     - target: {fileID: 7873533908172215096, guid: 18bdabf4576b9ff4d85a96d8a082a09d, type: 3}
       propertyPath: wheatCollisionScript
       value: 
