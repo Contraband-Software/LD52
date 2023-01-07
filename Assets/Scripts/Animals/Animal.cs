@@ -82,7 +82,6 @@ namespace Architecture.Hazards
         }
 
         IEnumerator WaitForNextMovement() {
-            Debug.Log("Nigger");
             yield return new WaitForSeconds(UnityEngine.Random.Range(minTimeToMove, maxTimeToMove));
             MoveToNewPosition();
         }
@@ -100,9 +99,9 @@ namespace Architecture.Hazards
             );
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        private void OnTriggerEnter2D(Collider2D col)
         {
-            if(collision.collider.gameObject.tag == "HarvesterBlade")
+            if(col.gameObject.tag == "HarvesterBlade")
             {
                 spriteRenderer.enabled = false;
                 boxCol.enabled = false;
