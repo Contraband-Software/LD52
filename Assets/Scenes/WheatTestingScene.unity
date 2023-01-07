@@ -425,9 +425,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b22f9adbb7a05749bd40350eeaa6dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  topLeftGrid: {x: 0, y: 0}
+  testingTile: {fileID: 0}
   rb: {fileID: 522473517}
-  wheatTileMap: {fileID: 0}
-  dirtTile: {fileID: 0}
+  bladesCollider: {fileID: 0}
+  wheatCollisionScript: {fileID: 0}
+  collideOnlyWithHarvesterBlade:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &522473516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -693,7 +698,6 @@ GameObject:
   - component: {fileID: 860741345}
   - component: {fileID: 860741348}
   - component: {fileID: 860741347}
-  - component: {fileID: 860741349}
   m_Layer: 0
   m_Name: WheatTilemap
   m_TagString: Untagged
@@ -906,30 +910,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 82, y: 43}
   m_EdgeRadius: 0
---- !u!114 &860741349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 860741343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce67e0f3126fe0f47a97328056e5b0cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  topEdge: {fileID: 11400000, guid: 6e7c637f807f1b641857478ea93ce77a, type: 2}
-  bottomEdge: {fileID: 11400000, guid: b974772b7c8830740a8c5587b63f7cd6, type: 2}
-  leftEdge: {fileID: 11400000, guid: f8c7f8ef7614f0f4fb5c1ae3d1ef6d8c, type: 2}
-  rightEdge: {fileID: 11400000, guid: 4e0fff74d6f4a9b48a092c22859c1191, type: 2}
-  topLeftCornerLarge: {fileID: 11400000, guid: 068771722dda1b840afb0a6a1e457bcc, type: 2}
-  topRightCornerLarge: {fileID: 11400000, guid: 4271494f4acf7f148b6d455de92e5446, type: 2}
-  bottomLeftCornerLarge: {fileID: 11400000, guid: be45f10f215397f4bba100cab5fe349c, type: 2}
-  bottomRightCornerLarge: {fileID: 11400000, guid: 6301b7d02ec0a174ea2e28c7adccf084, type: 2}
-  topLeftCornerSmall: {fileID: 11400000, guid: 068771722dda1b840afb0a6a1e457bcc, type: 2}
-  topRightCornerSmall: {fileID: 11400000, guid: 93c301e9100784b489e6c0aaacec93c2, type: 2}
-  bottomLeftCornerSmall: {fileID: 11400000, guid: fe8667b633f349f41b55f9598b5efba9, type: 2}
-  bottomRightCornerSmall: {fileID: 11400000, guid: d2c1d753985e3354d94a9518b83f140a, type: 2}
 --- !u!1 &1582405795
 GameObject:
   m_ObjectHideFlags: 0
