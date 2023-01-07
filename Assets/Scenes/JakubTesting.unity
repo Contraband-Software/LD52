@@ -375,7 +375,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -13253,14 +13253,14 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 1
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 3
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -22645,9 +22645,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1961720548}
   - component: {fileID: 1961720547}
-  - component: {fileID: 1961720546}
   - component: {fileID: 1961720545}
   - component: {fileID: 1961720549}
+  - component: {fileID: 1961720550}
   m_Layer: 0
   m_Name: Cow
   m_TagString: Untagged
@@ -22681,18 +22681,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 4}
   m_EdgeRadius: 0
---- !u!114 &1961720546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1961720544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7253ceaed98ee614ea7471f919b1dcb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &1961720547
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22797,6 +22785,26 @@ MonoBehaviour:
   m_ShapePathHash: 1079842203
   m_Mesh: {fileID: 2008761232}
   m_InstanceId: 46780
+--- !u!114 &1961720550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961720544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b53522dce7cd84da55475925d1cc1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0
+  rotationSpeed: 0
+  minTimeToMove: 0
+  maxTimeToMove: 999
+  minMoveDistance: 0
+  maxMoveDistance: 0
+  bloodPFX: {fileID: 1565479977}
+  intestinesPFX: {fileID: 317198539}
 --- !u!43 &2008761232
 Mesh:
   m_ObjectHideFlags: 0
