@@ -7511,8 +7511,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 949425a334ee832458d5a2ee9effe27e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wheatTilemap: {fileID: 0}
-  harvestedWheatTilemap: {fileID: 0}
+  wheatTilemap: {fileID: 4768176161150930586}
+  harvestedWheatTilemap: {fileID: 9123962838700091307}
   harvestedWheatTile: {fileID: 0}
 --- !u!61 &4768176161150930585
 BoxCollider2D:

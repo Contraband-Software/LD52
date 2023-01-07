@@ -628,6 +628,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1366378372 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4768176161150930584, guid: 6490d75fec24bde4db1e6aafc8599889, type: 3}
+  m_PrefabInstance: {fileID: 1514006542}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 949425a334ee832458d5a2ee9effe27e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1514006542
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -875,7 +886,7 @@ PrefabInstance:
     - target: {fileID: 7873533908172215096, guid: 18bdabf4576b9ff4d85a96d8a082a09d, type: 3}
       propertyPath: wheatCollisionScript
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1366378372}
     - target: {fileID: 7873533908172215097, guid: 18bdabf4576b9ff4d85a96d8a082a09d, type: 3}
       propertyPath: m_RootOrder
       value: 3

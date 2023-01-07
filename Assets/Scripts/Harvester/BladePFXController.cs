@@ -19,6 +19,7 @@ public class BladePFXController : MonoBehaviour
             if (!bpfx.currentPlayingPFX)
             {
                 bpfx.PlayPFX(wheatPosition);
+                break;
             }
         }
     }
