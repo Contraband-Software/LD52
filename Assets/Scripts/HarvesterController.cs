@@ -78,7 +78,6 @@ namespace Harvester
                         RaycastHit2D hit = Physics2D.Raycast(probeCoordinate, Vector2.up, 0f, collideOnlyWithHarvesterBlade);
                         if(hit)
                         {
-                            print(hit.point);
                             wheatCollisionScript.DeleteWheatTileAtCoordinate(probeCoordinate);
                         }
                     }
