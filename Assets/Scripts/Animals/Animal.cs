@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
 using UnityEngine.Rendering.Universal;
+using static UnityEngine.GraphicsBuffer;
 
 namespace Architecture.Hazards
 {
@@ -67,6 +68,8 @@ namespace Architecture.Hazards
         {
             if (moving)
             {
+                Vector2 direction = targetPosition - transform.position;
+                transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
                 transform.Translate(
                     (targetPosition - transform.position).normalized 
                     * Mathf.Clamp((targetPosition - transform.position).magnitude, 0, moveSpeed),
