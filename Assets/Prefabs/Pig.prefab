@@ -186,7 +186,7 @@ MonoBehaviour:
   intestinesPFX: {fileID: 5505932106949974566}
   spriteRenderer: {fileID: 5505932105440210958}
   boxCol: {fileID: 5505932105440210956}
-  shadowCaster: {fileID: 0}
+  shadowCaster: {fileID: 9071049400005211896}
 --- !u!114 &9071049400005211896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,7 +216,7 @@ MonoBehaviour:
   - {x: -0.50091743, y: -1.0027981, z: 0}
   m_ShapePathHash: 1034998631
   m_Mesh: {fileID: 0}
-  m_InstanceId: 35144
+  m_InstanceId: 39408
 --- !u!1 &5505932106134232779
 GameObject:
   m_ObjectHideFlags: 0
