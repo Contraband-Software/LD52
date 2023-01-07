@@ -6,19 +6,20 @@ using UnityEngine.Tilemaps;
 namespace Architecture.Wheat
 {
     [
-        RequireComponent(typeof(Tilemap))
+        RequireComponent(typeof(Grid))
     ]
     public class WheatCollision : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField] GridLayout grid;
+        [SerializeField] Tilemap wheatTilemap;
+        [SerializeField] Tilemap harvestedWheatTilemap;
         [SerializeField] Tile harvestedWheatTile;
 
-        Tilemap wheatTileMap;
+        Grid grid;
 
         private void Awake()
         {
-            wheatTileMap = GetComponent<Tilemap>();
+            grid = GetComponent<Grid>();
 
 #if UNITY_EDITOR
             if (harvestedWheatTile == null)
@@ -36,14 +37,15 @@ namespace Architecture.Wheat
         public bool IsWheatTilePresent(Vector2 worldPosition)
         {
             Vector3Int tilePos = grid.WorldToCell(worldPosition);
-            if (wheatTileMap.GetTile<TileBase>(tilePos) != null) { return true; }
+            if (wheatTilemap.GetTile<TileBase>(tilePos) != null) { return true; }
             return false;
         }
 
         public void DeleteWheatTileAtCoordinate(Vector2 worldPosition)
         {
             Vector3Int tilePos = grid.WorldToCell(worldPosition);
-            wheatTileMap.SetTile(tilePos, null);
+            wheatTilemap.SetTile(tilePos, null);
+            harvestedWheatTilemap.SetTile(tilePos, harvestedWheatTile);
         }
     }
 }
