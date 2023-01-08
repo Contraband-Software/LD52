@@ -27,9 +27,18 @@ namespace Architecture.Managers
         void Update()
         {
             timeLeft -= Time.deltaTime;
-
-            UIControllerLevel.GetReference().UpdateTimeLeft(timeLeft);
+            if(timeLeft <= 0f)
+            {
+                timeLeft = 0f;
+                TimeRanOut();
+            }
+            UIControllerLevel.GetReference().UpdateTimeLeft(timeLeft / timeLimitSeconds);
             UIControllerLevel.GetReference().UpdatePercentageHarvested(Wheat.WheatFieldManager.GetReference().GetPercentageHarvested());
+        }
+
+        void TimeRanOut()
+        {
+
         }
     }
 }
