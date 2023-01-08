@@ -573,10 +573,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6270116759255087136, guid: 19498780b7607124c8932510239d6aba, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6270116759255087139, guid: 19498780b7607124c8932510239d6aba, type: 3}
       propertyPath: m_Name
       value: UI_PauseCanvas
@@ -736,6 +732,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 98744008, guid: 45082070c3a44b24aa959332165235dd, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8621834431061340080, guid: 45082070c3a44b24aa959332165235dd, type: 3}
       propertyPath: m_Pivot.x
       value: 0
