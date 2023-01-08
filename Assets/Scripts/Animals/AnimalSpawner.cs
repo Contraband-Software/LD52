@@ -6,7 +6,8 @@ using System;
 namespace Architecture.Hazards
 {
     [
-        RequireComponent(typeof(RectTransform))
+        RequireComponent(typeof(RectTransform)), 
+        DisallowMultipleComponent
     ]
     public class AnimalSpawner : MonoBehaviour
     {

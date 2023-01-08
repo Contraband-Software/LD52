@@ -2,50 +2,61 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Tilemaps;
 
 namespace Architecture.Harvester
 {
     using Wheat;
+    using Managers;
 
+    [
+        RequireComponent(typeof(Rigidbody2D)),
+        RequireComponent(typeof(PlayerInput)),
+        DisallowMultipleComponent
+    ]
     public class HarvesterController : MonoBehaviour
     {
-        public Vector2 topLeftGrid;
-        public Tile testingTile;
-
         [Header("Self Component References")]
-        [SerializeField] Rigidbody2D rb;
         [SerializeField] BoxCollider2D bladesCollider;
 
         [Header("Wheat Collision")]
-        [SerializeField] WheatCollision wheatCollisionScript;
+        [SerializeField] WheatFieldManager wheatCollisionScript;
         [SerializeField] LayerMask collideOnlyWithHarvesterBlade;
 
         [Header("Particle Effects")]
         [SerializeField] BladePFXController bladePFXController;
 
+        [Header("Settings")]
+        [SerializeField, Min(0)] float acceleration = 8f;
+        [SerializeField, Min(0)] float turnSpeed = 0.6f;
+
+        private Rigidbody2D rb;
         private float horizontal;
         private float vertical;
-        private float speed = 8f;
 
-        // Start is called before the first frame update
-        void Start()
+        #region UNITY
+        private void Start()
         {
-
+            rb = GetComponent<Rigidbody2D>();
+            SoundSystem.Instance.PlaySound("Harvester_Motor");
         }
 
-        // Update is called once per frame
-        void Update()
+        private void Update()
         {
             CheckForBladeCollision();
-
-            rb.velocity = new Vector2(rb.velocity.x, vertical * speed);
         }
 
-        public void Move(InputAction.CallbackContext context)
+        private void FixedUpdate()
         {
+            rb.AddForce(acceleration * vertical * transform.up);
+            transform.Rotate(horizontal * Vector3.forward * -1 * turnSpeed * Mathf.Abs(vertical));
+        }
+
+        private void Move(InputAction.CallbackContext context)
+        {
+            horizontal = context.ReadValue<Vector2>().x;
             vertical = context.ReadValue<Vector2>().y;
         }
+        #endregion
 
         private void CheckForBladeCollision()
         {
@@ -53,20 +64,20 @@ namespace Architecture.Harvester
 
             //find AABB coordinates
             float leftX = bladesAABB.center.x - bladesAABB.extents.x;
-            float rightX = bladesAABB.center.x + bladesAABB.extents.x;
+            //float rightX = bladesAABB.center.x + bladesAABB.extents.x;
             float topY = bladesAABB.center.y + bladesAABB.extents.y;
-            float bottomY = bladesAABB.center.y - bladesAABB.extents.y;
+            //float bottomY = bladesAABB.center.y - bladesAABB.extents.y;
 
             Vector2 topLeft = new Vector2(leftX, topY);
-            Vector2 topRight = new Vector2(rightX, topY);
-            Vector2 bottomLeft = new Vector2(leftX, bottomY);
-            Vector2 bottomRight = new Vector2(rightX, bottomY);
+            //Vector2 topRight = new Vector2(rightX, topY);
+            //Vector2 bottomLeft = new Vector2(leftX, bottomY);
+            //Vector2 bottomRight = new Vector2(rightX, bottomY);
 
             Vector2 topLeftGridCell = new Vector2(Mathf.Round(topLeft.x), Mathf.Round(topLeft.y));
             //print(wheatCollisionScript.IsWheatTilePresent(topLeftGridCell));
 
 
-            topLeftGrid = topLeftGridCell;
+            //topLeftGrid = topLeftGridCell;
             //use top left coordinate, sample 10x10
             //rows
             for(int i = 0; i < 10; i++)
