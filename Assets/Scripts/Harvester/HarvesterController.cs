@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 #pragma warning disable IDE0090
 
@@ -17,6 +18,10 @@ namespace Architecture.Harvester
     ]
     public class HarvesterController : MonoBehaviour
     {
+        #region EVENTS
+        public UnityEvent HarvesterDestroyed { get; private set; } = new UnityEvent();
+        #endregion
+
         [Header("Self Component References")]
         [SerializeField] BoxCollider2D bladesCollider;
 
@@ -68,6 +73,14 @@ namespace Architecture.Harvester
             vertical = context.ReadValue<Vector2>().y;
         }
 #pragma warning restore IDE0051
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.tag == "Rocks")
+            {
+                OnRockHit();
+            }
+        }
         #endregion
 
         private void CheckForBladeCollision()
@@ -105,6 +118,13 @@ namespace Architecture.Harvester
                     }
                 }
             }
+        }
+
+        void OnRockHit()
+        {
+            HarvesterDestroyed.Invoke();
+
+            SoundSystem.Instance.PlaySound("Harvester_Breakdown");
         }
         
         public void OnAnimalHit()
