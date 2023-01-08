@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimitSeconds: 30
-  percentageGoal: 40
+  percentageGoal: 45

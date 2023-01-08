@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6809739052224362691}
   - component: {fileID: 4358546731332531823}
   - component: {fileID: 90337485}
+  - component: {fileID: 90337489}
   m_Layer: 0
   m_Name: Tilemap_Rocks
   m_TagString: Rocks
@@ -191,6 +192,27 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!50 &90337489
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293735457730034294}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &329712287142223067
 GameObject:
   m_ObjectHideFlags: 0
@@ -14523,6 +14545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2e9ff0542414f6438a99ebffbe3f762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundTilemap: {fileID: 4768176162178232429}
   rockTilemap: {fileID: 6006534327195894770}
   wheatTileMap: {fileID: 4768176161150930586}
   rockTiles:
@@ -14530,7 +14553,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 27971c75d880a1543b12bee3bed983f3, type: 2}
   - {fileID: 11400000, guid: f5a7d1c9d8a575e40a714ab1bf1760be, type: 2}
   - {fileID: 11400000, guid: 6e9ba5fe4e2900a45b183eb72f729ffa, type: 2}
-  rockGameObject: {fileID: 0}
+  rockGameObject: {fileID: 2209802244628092795, guid: 6e5d84bb061bcbd498f30340e21c82e3, type: 3}
   spawnChancePerTileRow: 0.028
 --- !u!1 &4768176162178232430
 GameObject:

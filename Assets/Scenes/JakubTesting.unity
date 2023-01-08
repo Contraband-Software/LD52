@@ -123,32 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &90337480 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 293735457730034294, guid: 6490d75fec24bde4db1e6aafc8599889, type: 3}
-  m_PrefabInstance: {fileID: 1514006542}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &90337489
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90337480}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
 --- !u!114 &172686543 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5005479773932450242, guid: 6490d75fec24bde4db1e6aafc8599889, type: 3}
@@ -167,18 +141,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1110423971, guid: 6bc1b1b287fcf5441b03dce29f30a517, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -2424726437332893659, guid: 4ca42569c1096a149a1b63a47dff5c7f, type: 2}
-    - target: {fileID: 5035201868860410021, guid: 6bc1b1b287fcf5441b03dce29f30a517, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -8207871094926475288, guid: 4ca42569c1096a149a1b63a47dff5c7f, type: 2}
-    - target: {fileID: 5035201868929386099, guid: 6bc1b1b287fcf5441b03dce29f30a517, type: 3}
-      propertyPath: m_Volume
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5035201869336231285, guid: 6bc1b1b287fcf5441b03dce29f30a517, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -229,37 +191,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bc1b1b287fcf5441b03dce29f30a517, type: 3}
---- !u!1 &711508899 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7873533908172215099, guid: 18bdabf4576b9ff4d85a96d8a082a09d, type: 3}
-  m_PrefabInstance: {fileID: 7873533908325581587}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &711508907
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 711508899}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.064617634, y: 3.4851277}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10, y: 7.875}
-    newSize: {x: 10, y: 15}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 9.019935, y: 0.9047446}
-  m_EdgeRadius: 0
 --- !u!1001 &890853175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -328,30 +259,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 266212013, guid: 6490d75fec24bde4db1e6aafc8599889, type: 3}
-      propertyPath: spawnArea.x
-      value: 94.87
-      objectReference: {fileID: 0}
-    - target: {fileID: 266212013, guid: 6490d75fec24bde4db1e6aafc8599889, type: 3}
-      propertyPath: spawnArea.y
-      value: 88.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 266212013, guid: 6490d75fec24bde4db1e6aafc8599889, type: 3}
-      propertyPath: groundTilemap
-      value: 
-      objectReference: {fileID: 1517310032}
-    - target: {fileID: 266212013, guid: 6490d75fec24bde4db1e6aafc8599889, type: 3}
-      propertyPath: rockGameObject
-      value: 
-      objectReference: {fileID: 2209802244628092795, guid: 6e5d84bb061bcbd498f30340e21c82e3, type: 3}
-    - target: {fileID: 169357794497991831, guid: 6490d75fec24bde4db1e6aafc8599889, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 169357794497991831, guid: 6490d75fec24bde4db1e6aafc8599889, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4768176161849923041, guid: 6490d75fec24bde4db1e6aafc8599889, type: 3}
       propertyPath: m_Name
       value: Map
@@ -400,33 +307,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6662083409454315242, guid: 6490d75fec24bde4db1e6aafc8599889, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6662083409454315242, guid: 6490d75fec24bde4db1e6aafc8599889, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6662083409454315242, guid: 6490d75fec24bde4db1e6aafc8599889, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6662083409454315242, guid: 6490d75fec24bde4db1e6aafc8599889, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6662083409454315242, guid: 6490d75fec24bde4db1e6aafc8599889, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6490d75fec24bde4db1e6aafc8599889, type: 3}
---- !u!1839735485 &1517310032 stripped
-Tilemap:
-  m_CorrespondingSourceObject: {fileID: 4768176162178232429, guid: 6490d75fec24bde4db1e6aafc8599889, type: 3}
-  m_PrefabInstance: {fileID: 1514006542}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1900236556
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,10 +499,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelController
       objectReference: {fileID: 0}
-    - target: {fileID: 8633802531341878818, guid: 57b5da1f10d5fa745a0b18254ec69e66, type: 3}
-      propertyPath: percentageGoal
-      value: 45
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57b5da1f10d5fa745a0b18254ec69e66, type: 3}
 --- !u!1001 &4204026649564265342
@@ -691,22 +569,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7873533908172215096, guid: 18bdabf4576b9ff4d85a96d8a082a09d, type: 3}
-      propertyPath: turnSpeed
-      value: 2.73
-      objectReference: {fileID: 0}
-    - target: {fileID: 7873533908172215096, guid: 18bdabf4576b9ff4d85a96d8a082a09d, type: 3}
-      propertyPath: hazardEffectOnSpeed
-      value: 200.51
-      objectReference: {fileID: 0}
-    - target: {fileID: 7873533908172215096, guid: 18bdabf4576b9ff4d85a96d8a082a09d, type: 3}
-      propertyPath: hazardSlowdownFactor
-      value: 0.18
-      objectReference: {fileID: 0}
-    - target: {fileID: 7873533908172215096, guid: 18bdabf4576b9ff4d85a96d8a082a09d, type: 3}
-      propertyPath: penaltyTimeInSeconds
-      value: 7.15
-      objectReference: {fileID: 0}
     - target: {fileID: 7873533908172215096, guid: 18bdabf4576b9ff4d85a96d8a082a09d, type: 3}
       propertyPath: wheatCollisionScript
       value: 
