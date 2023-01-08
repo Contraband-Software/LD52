@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 7873533908172215100}
   - component: {fileID: 7873533908172215096}
   - component: {fileID: 7873533908172215103}
+  - component: {fileID: 8684131602111329665}
   m_Layer: 0
   m_Name: Harvester
   m_TagString: Player
@@ -398,6 +399,14 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!81 &8684131602111329665
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7873533908172215099}
+  m_Enabled: 1
 --- !u!1 &7873533908756092629
 GameObject:
   m_ObjectHideFlags: 0
