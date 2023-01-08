@@ -41,7 +41,7 @@ namespace Architecture.Managers
         /// </summary>
         /// <param name="sound"></param>
         /// <exception cref="ArgumentException">If the sound name doesn't exist</exception>
-        public void PlaySound(string sound)
+        public void PlaySound(string sound, bool oneShot)
         {
 #if UNITY_EDITOR
             if (!sfxDictionary.ContainsKey(sound))
@@ -49,7 +49,17 @@ namespace Architecture.Managers
                 throw new ArgumentException("Unknown/invalid sound name, ensure the GameObject containing it has the same name you have supplied to this function.");
             }
 #endif
-            sfxDictionary[sound].Play();
+            if (oneShot)
+            {
+                sfxDictionary[sound].PlayOneShot(sfxDictionary[sound].clip);
+            } else
+            {
+                sfxDictionary[sound].Play();
+            }
+        }
+        public void PlaySound(string sound)
+        {
+            PlaySound(sound, false);
         }
 
         /// <summary>
