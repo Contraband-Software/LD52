@@ -688,6 +688,22 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7873533908172215096, guid: 18bdabf4576b9ff4d85a96d8a082a09d, type: 3}
+      propertyPath: turnSpeed
+      value: 2.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873533908172215096, guid: 18bdabf4576b9ff4d85a96d8a082a09d, type: 3}
+      propertyPath: hazardEffectOnSpeed
+      value: 200.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873533908172215096, guid: 18bdabf4576b9ff4d85a96d8a082a09d, type: 3}
+      propertyPath: hazardSlowdownFactor
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873533908172215096, guid: 18bdabf4576b9ff4d85a96d8a082a09d, type: 3}
+      propertyPath: penaltyTimeInSeconds
+      value: 7.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873533908172215096, guid: 18bdabf4576b9ff4d85a96d8a082a09d, type: 3}
       propertyPath: wheatCollisionScript
       value: 
       objectReference: {fileID: 172686543}

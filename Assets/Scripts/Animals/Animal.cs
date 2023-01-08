@@ -114,7 +114,7 @@ namespace Architecture.Hazards
 
         private void OnTriggerEnter2D(Collider2D col)
         {
-            if(col.gameObject.tag == "HarvesterBlade")
+            if(col.gameObject.tag == "HarvesterBlade" && !HarvesterController.GetReference().Penalty)
             {
                 spriteRenderer.enabled = false;
                 boxCol.enabled = false;
