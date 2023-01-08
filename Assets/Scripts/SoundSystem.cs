@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using Unity.VisualScripting;
+
+#pragma warning disable UNT0014
 
 namespace Architecture.Managers
 {
@@ -39,7 +40,7 @@ namespace Architecture.Managers
         /// Plays a sound by name in the heirarchy.
         /// </summary>
         /// <param name="sound"></param>
-        /// <exception cref="ArgumentException"></exception>
+        /// <exception cref="ArgumentException">If the sound name doesn't exist</exception>
         public void PlaySound(string sound)
         {
 #if UNITY_EDITOR

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+#pragma warning disable IDE0090
+
 namespace Architecture.Harvester
 {
     using Wheat;
@@ -30,10 +32,13 @@ namespace Architecture.Harvester
         [Header("Settings")]
         [SerializeField, Min(0)] float acceleration = 8f;
         [SerializeField, Min(0)] float turnSpeed = 0.6f;
+        [SerializeField, Range(0, 1)] float hazardSlowdownFactor = 0.3f;
+        [SerializeField, Min(0)] float hazardEffectOnSpeed = 176;
 
         private Rigidbody2D rb;
         private float horizontal;
         private float vertical;
+        private float currentHazardSlowDownFactor = 1;
 
         #region UNITY
         private void Start()
@@ -49,15 +54,20 @@ namespace Architecture.Harvester
 
         private void FixedUpdate()
         {
-            rb.AddForce(acceleration * vertical * transform.up);
-            transform.Rotate(horizontal * Vector3.forward * -1 * turnSpeed * Mathf.Abs(vertical));
+            rb.AddForce(acceleration * vertical * currentHazardSlowDownFactor * transform.up);
+            //It is multiplied with Mathf.Abs(vertical) to make it harder to turn when slower, impossible when still
+            transform.Rotate(-1 * currentHazardSlowDownFactor * turnSpeed * horizontal * Mathf.Abs(vertical) * Vector3.forward);
+
+            currentHazardSlowDownFactor += (1 - currentHazardSlowDownFactor) / hazardEffectOnSpeed;
         }
 
+#pragma warning disable IDE0051
         private void Move(InputAction.CallbackContext context)
         {
             horizontal = context.ReadValue<Vector2>().x;
             vertical = context.ReadValue<Vector2>().y;
         }
+#pragma warning restore IDE0051
         #endregion
 
         private void CheckForBladeCollision()
@@ -96,10 +106,14 @@ namespace Architecture.Harvester
                 }
             }
         }
-
-        public void PlayMincingPFX()
+        
+        public void OnAnimalHit()
         {
             meatEjectPFX.Play();
+
+            SoundSystem.Instance.PlaySound("Harvester_Mincing");
+
+            currentHazardSlowDownFactor = hazardSlowdownFactor;
         }
     }
 }

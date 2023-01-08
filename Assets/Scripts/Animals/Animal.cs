@@ -138,7 +138,7 @@ namespace Architecture.Hazards
                 }
 
                 //Plays the harvesters mincing PFX, COUPLING ISSUE
-                col.transform.parent.gameObject.GetComponent<HarvesterController>().PlayMincingPFX();
+                col.transform.parent.gameObject.GetComponent<HarvesterController>().OnAnimalHit();//.PlayMincingPFX();
             }
         }
     }
