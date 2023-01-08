@@ -621,7 +621,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Harvester
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 519420033, guid: 18bdabf4576b9ff4d85a96d8a082a09d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 18bdabf4576b9ff4d85a96d8a082a09d, type: 3}
 --- !u!1001 &8621834430908088201
 PrefabInstance:

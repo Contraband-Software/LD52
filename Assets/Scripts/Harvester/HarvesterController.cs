@@ -140,9 +140,15 @@ namespace Architecture.Harvester
 
         private void OnRockHit()
         {
+            // To stop the animal hit coroutines
+            StopAllCoroutines();
+
             bladeAnimation.SetFloat("BladeSpeed", 0f);
 
             SoundSystem.Instance.PlaySound("Harvester_Breakdown");
+
+            // Just so animals no longer get killed by the broken-down harvester
+            Penalty = true;
 
             LockControls(true);
 
