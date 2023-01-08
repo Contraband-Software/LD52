@@ -62,22 +62,13 @@ namespace Architecture.Harvester
         {
             Bounds bladesAABB = bladesCollider.bounds;
 
-            //find AABB coordinates
+            //find AABB coordinates of top left corner
             float leftX = bladesAABB.center.x - bladesAABB.extents.x;
-            //float rightX = bladesAABB.center.x + bladesAABB.extents.x;
             float topY = bladesAABB.center.y + bladesAABB.extents.y;
-            //float bottomY = bladesAABB.center.y - bladesAABB.extents.y;
 
             Vector2 topLeft = new Vector2(leftX, topY);
-            //Vector2 topRight = new Vector2(rightX, topY);
-            //Vector2 bottomLeft = new Vector2(leftX, bottomY);
-            //Vector2 bottomRight = new Vector2(rightX, bottomY);
-
             Vector2 topLeftGridCell = new Vector2(Mathf.Round(topLeft.x), Mathf.Round(topLeft.y));
-            //print(wheatCollisionScript.IsWheatTilePresent(topLeftGridCell));
 
-
-            //topLeftGrid = topLeftGridCell;
             //use top left coordinate, sample 10x10
             //rows
             for(int i = 0; i < 10; i++)
