@@ -663,6 +663,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19498780b7607124c8932510239d6aba, type: 3}
+--- !u!223 &6270116759070783932 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 6270116759255087136, guid: 19498780b7607124c8932510239d6aba, type: 3}
+  m_PrefabInstance: {fileID: 6270116759070783931}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7873533908325581587
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -722,8 +727,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Harvester
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 519420033, guid: 18bdabf4576b9ff4d85a96d8a082a09d, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18bdabf4576b9ff4d85a96d8a082a09d, type: 3}
 --- !u!1001 &8621834430908088201
 PrefabInstance:
@@ -732,10 +736,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 98744008, guid: 45082070c3a44b24aa959332165235dd, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 8621834431061340080, guid: 45082070c3a44b24aa959332165235dd, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -821,9 +821,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8621834431061340092, guid: 45082070c3a44b24aa959332165235dd, type: 3}
-      propertyPath: bloodMaskFadeSpeed
-      value: 0.05
-      objectReference: {fileID: 0}
+      propertyPath: pauseCanvas
+      value: 
+      objectReference: {fileID: 6270116759070783932}
     - target: {fileID: 8621834431061340093, guid: 45082070c3a44b24aa959332165235dd, type: 3}
       propertyPath: m_Name
       value: UI_Game
