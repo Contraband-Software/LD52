@@ -46,8 +46,10 @@ namespace Architecture.Hazards
         [SerializeField] BoxCollider2D boxCol;
         [SerializeField] ShadowCaster2D shadowCaster;
 
+#pragma warning disable IDE0044
         private static float stoppingThreshold = 1f;
         private static float shakeAngle = 0.2f;
+#pragma warning restore IDE0044
 
         Vector3 targetPosition;
         bool moving = false;
@@ -114,7 +116,7 @@ namespace Architecture.Hazards
 
         private void OnTriggerEnter2D(Collider2D col)
         {
-            if(col.gameObject.tag == "HarvesterBlade" && !HarvesterController.GetReference().Penalty)
+            if(col.gameObject.CompareTag("HarvesterBlade") && !HarvesterController.GetReference().Penalty)
             {
                 spriteRenderer.enabled = false;
                 boxCol.enabled = false;
@@ -139,8 +141,7 @@ namespace Architecture.Hazards
                         break;
                 }
 
-                //Plays the harvesters mincing PFX, COUPLING ISSUE
-                col.transform.parent.gameObject.GetComponent<HarvesterController>().OnAnimalHit();//.PlayMincingPFX();
+                HarvesterController.GetReference().OnAnimalHit();
             }
         }
     }

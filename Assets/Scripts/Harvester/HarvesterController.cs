@@ -30,7 +30,6 @@ namespace Architecture.Harvester
 
         [Header("Self Component References")]
         [SerializeField] BoxCollider2D bladesCollider;
-        Animator anim;
 
         [Header("Wheat Collision")]
         [SerializeField] WheatFieldManager wheatCollisionScript;
@@ -49,19 +48,22 @@ namespace Architecture.Harvester
         [SerializeField, Min(0)] float hazardEffectOnSpeed = 176;
 
         private Rigidbody2D rb;
-        private new Animation animation;
+        private Animator bladeAnimation;
+
         private float horizontal;
         private float vertical;
         private float currentHazardSlowDownFactor = 1;
+        private bool controlsLocked = false;
+
         public bool Penalty { get; private set; } = false;
 
         #region UNITY
         private void Start()
         {
             rb = GetComponent<Rigidbody2D>();
-            SoundSystem.Instance.PlaySound("Harvester_Motor");
+            bladeAnimation = GetComponent<Animator>();
 
-            animation = GetComponent<Animation>();
+            SoundSystem.Instance.PlaySound("Harvester_Motor");
         }
 
         private void Update()
@@ -79,8 +81,11 @@ namespace Architecture.Harvester
 #pragma warning disable IDE0051
         private void Move(InputAction.CallbackContext context)
         {
-            horizontal = context.ReadValue<Vector2>().x;
-            vertical = context.ReadValue<Vector2>().y;
+            if (!controlsLocked)
+            {
+                horizontal = context.ReadValue<Vector2>().x;
+                vertical = context.ReadValue<Vector2>().y;
+            }
         }
 #pragma warning restore IDE0051
 
@@ -133,28 +138,44 @@ namespace Architecture.Harvester
             }
         }
 
-        void OnRockHit()
+        private void OnRockHit()
         {
-            HarvesterDestroyed.Invoke();
-
-            // STOP ANIMATION HERE
-            anim.SetFloat("BladeSpeed", 0f);
+            bladeAnimation.SetFloat("BladeSpeed", 0f);
 
             SoundSystem.Instance.PlaySound("Harvester_Breakdown");
+
+            LockControls(true);
+
+            HarvesterDestroyed.Invoke();
         }
-        
+
+        #region PUBLIC_INTERFACE
+        /// <summary>
+        /// True = controls locked
+        /// False = controls released
+        /// </summary>
+        /// <param name="status"></param>
+        public void LockControls(bool status)
+        {
+            controlsLocked = status;
+        }
+
+        /// <summary>
+        /// Only for the Animal class to call
+        /// </summary>
         public void OnAnimalHit()
         {
             meatEjectPFX.Play();
 
-            // STOP ANIMATION HERE
-            anim.SetFloat("BladeSpeed", 0f);
+            bladeAnimation.SetFloat("BladeSpeed", 0f);
 
             SoundSystem.Instance.PlaySound("Harvester_Mincing");
 
             StartCoroutine(PenaltyPeriod());
         }
+        #endregion
 
+        #region PENALTY_COROUTINES
         IEnumerator PenaltyPeriod()
         {
             Penalty = true;
@@ -163,21 +184,20 @@ namespace Architecture.Harvester
 
             yield return new WaitForSeconds(penaltyTimeInSeconds);
 
-            Penalty = false;
-
             StartCoroutine(BackToNormal());
         }
 
         IEnumerator BackToNormal()
         {
-            // PLAY ANIMATION HERE
-            anim.SetFloat("BladeSpeed", 1f);
-
-            while (Mathf.Abs(1 - currentHazardSlowDownFactor) > 0.05f)
+            while (Mathf.Abs(1 - currentHazardSlowDownFactor) > 0.1f)
             {
                 currentHazardSlowDownFactor += (1 - currentHazardSlowDownFactor) / hazardEffectOnSpeed;
+                bladeAnimation.SetFloat("BladeSpeed", currentHazardSlowDownFactor);
                 yield return new WaitForEndOfFrame();
             }
+
+            Penalty = false;
         }
+        #endregion
     }
 }
