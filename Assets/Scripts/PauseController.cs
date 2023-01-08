@@ -5,10 +5,6 @@ using UnityEngine.Events;
 using Architecture.Managers;
 
 namespace Architecture.Managers {
-    [
-        RequireComponent(typeof(UIControllerLevel))
-    ]
-
     public class PauseController : MonoBehaviour
     {
         public UnityEvent PauseEvent { get; private set; } = new UnityEvent();
