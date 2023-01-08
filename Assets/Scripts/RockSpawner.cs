@@ -17,7 +17,7 @@ namespace Architecture
         [SerializeField] Tile[] rockTiles;
 
         [Header("Settings")]
-        [SerializeField, Range(0, 1)] float spawnChance = 0.96f;
+        [SerializeField, Range(0, 1)] float spawnChancePerTileRow = 0.96f;
 
         void Awake()
         {
@@ -27,7 +27,7 @@ namespace Architecture
             {
                 for (int x = bounds.x; x < bounds.x + bounds.size.x; x++)
                 {
-                    if (Random.value > spawnChance)
+                    if (Random.value > 1 - spawnChancePerTileRow)
                     {
                         PlaceRock(rockTilemap, new Vector3Int(x, y));
                         x++;
