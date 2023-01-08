@@ -54,7 +54,7 @@ namespace Architecture.Hazards
 
         private void Start()
         {
-            targetPosition = transform.position;
+            targetPosition = transform.localPosition;
 
 #if UNITY_EDITOR
             if (maxTimeToMove < minTimeToMove || maxMoveDistance < minMoveDistance)
@@ -68,7 +68,7 @@ namespace Architecture.Hazards
 
         private void Update()
         {
-            if ((targetPosition - transform.position).magnitude < stoppingThreshold && moving)
+            if ((targetPosition - transform.localPosition).magnitude < stoppingThreshold && moving)
             {
                 moving = false;
                 StartCoroutine(WaitForNextMovement());
@@ -79,11 +79,13 @@ namespace Architecture.Hazards
         {
             if (moving)
             {
-                Vector2 direction = targetPosition - transform.position;
+                Vector3 localPosition = transform.localPosition;
+
+                Vector2 direction = targetPosition - localPosition;
                 transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
                 transform.Translate(
-                    (targetPosition - transform.position).normalized 
-                    * Mathf.Clamp((targetPosition - transform.position).magnitude, 0, moveSpeed),
+                    (targetPosition - localPosition).normalized 
+                    * Mathf.Clamp((targetPosition - localPosition).magnitude, 0, moveSpeed),
                     transform.parent
                 );
             } else
@@ -99,13 +101,13 @@ namespace Architecture.Hazards
 
         void MoveToNewPosition()
         {
-            float directionToMove = UnityEngine.Random.Range(0, Mathf.PI * 2);
+            Vector2 directionToMove = UnityEngine.Random.insideUnitCircle.normalized;
             float distanceToMove = UnityEngine.Random.Range(minMoveDistance, maxMoveDistance);
 
             moving = true;
             targetPosition = new Vector3(
-                Mathf.Clamp(Mathf.Cos(directionToMove) * distanceToMove, MoveBounds.x, MoveBounds.z),
-                Mathf.Clamp(Mathf.Sin(directionToMove) * distanceToMove, MoveBounds.y, MoveBounds.w),
+                Mathf.Clamp(directionToMove.x * distanceToMove, MoveBounds.x, MoveBounds.z),
+                Mathf.Clamp(directionToMove.y * distanceToMove, MoveBounds.y, MoveBounds.w),
                 0
             );
         }

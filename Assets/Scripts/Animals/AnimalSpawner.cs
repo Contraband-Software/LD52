@@ -30,19 +30,19 @@ namespace Architecture.Hazards
             RectTransform bc = GetComponent<RectTransform>();
 
             Animal.MoveBounds = new Vector4(
-                bc.anchoredPosition.x,
-                bc.anchoredPosition.y,
-                bc.anchoredPosition.x + bc.sizeDelta.x,
-                bc.anchoredPosition.y + bc.sizeDelta.y
+                0,
+                0,
+                bc.sizeDelta.x,
+                bc.sizeDelta.y
             );
 
-            Debug.Log(Animal.MoveBounds);
+            Debug.Log(Animal.MoveBounds.ToString());
 
             foreach (AnimalSpawnOptions animal in animalSpawnOptions)
             {
                 for (int i = 0; i < animal.amount; i++) {
                     GameObject obj = Instantiate(animal.instance, instanceParent.transform);
-                    obj.transform.position = new Vector3(
+                    obj.transform.localPosition = new Vector3(
                         UnityEngine.Random.Range(Animal.MoveBounds.x, Animal.MoveBounds.z),
                         UnityEngine.Random.Range(Animal.MoveBounds.y, Animal.MoveBounds.w),
                         0
