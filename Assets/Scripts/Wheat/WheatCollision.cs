@@ -22,10 +22,10 @@ namespace Architecture.Wheat
             grid = GetComponent<Grid>();
 
 #if UNITY_EDITOR
-            if (harvestedWheatTile == null)
-            {
-                throw new System.ArgumentException("No harvested wheat tile reference");
-            }
+            //if (harvestedWheatTile == null)
+            //{
+            //    throw new System.ArgumentException("No harvested wheat tile reference");
+            //}
 #endif
         }
 
