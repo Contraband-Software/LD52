@@ -24,6 +24,8 @@ namespace Architecture.Harvester
 
         [Header("Particle Effects")]
         [SerializeField] BladePFXController bladePFXController;
+        [SerializeField] ParticleSystem wheatEjectPFX;
+        [SerializeField] ParticleSystem meatEjectPFX;
 
         [Header("Settings")]
         [SerializeField, Min(0)] float acceleration = 8f;
@@ -88,10 +90,16 @@ namespace Architecture.Harvester
                         {
                             wheatCollisionScript.DeleteWheatTileAtCoordinate(probeCoordinate);
                             bladePFXController.PlayHarvestPFX(centreOfTile);
+                            wheatEjectPFX.Play();
                         }
                     }
                 }
             }
+        }
+
+        public void PlayMincingPFX()
+        {
+            meatEjectPFX.Play();
         }
     }
 }

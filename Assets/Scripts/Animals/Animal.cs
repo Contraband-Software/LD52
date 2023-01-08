@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
+using Architecture.Harvester;
+
 namespace Architecture.Hazards
 {
     using Managers;
@@ -134,6 +136,9 @@ namespace Architecture.Hazards
                         SoundSystem.Instance.PlaySound("Pig_Death_1");
                         break;
                 }
+
+                //Plays the harvesters mincing PFX, COUPLING ISSUE
+                col.transform.parent.gameObject.GetComponent<HarvesterController>().PlayMincingPFX();
             }
         }
     }
