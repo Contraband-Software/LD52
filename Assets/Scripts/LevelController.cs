@@ -17,9 +17,6 @@ namespace Architecture.Managers
 
         float timeLeft;
 
-        [Header("Progress")]
-        [SerializeField] int totalWheatOnField;
-
         private void Start()
         {
             timeLeft = timeLimitSeconds;
@@ -31,11 +28,6 @@ namespace Architecture.Managers
 
             UIController.GetReference().UpdateTimeLeft(timeLeft);
             UIController.GetReference().UpdatePercentageHarvested(Wheat.WheatFieldManager.GetReference().GetPercentageHarvested());
-        }
-
-        public void SetTotalWheat(int w)
-        {
-            totalWheatOnField = w;
         }
     }
 }
