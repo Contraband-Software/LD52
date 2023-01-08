@@ -14,9 +14,18 @@ namespace Architecture.Hazards
     ]
     public class Animal : MonoBehaviour
     {
+        public enum Type
+        {
+            Cow,
+            Pig
+        }
+
         public static Vector4 MoveBounds { get; set; } = Vector4.zero;
 
-        [Header("Movement Variables")]
+        [Header("General Settings")]
+        [SerializeField] Type animalType = Type.Cow;
+
+        [Header("Movement Settings")]
         [SerializeField, Min(0)] float moveSpeed = 1f;
         [SerializeField, Min(0)] float rotationSpeed = 7f;
 
@@ -109,6 +118,22 @@ namespace Architecture.Hazards
                 
                 bloodPFX.Play();
                 intestinesPFX.Play();
+
+                switch (animalType)
+                {
+                    case Type.Cow:
+                        if (UnityEngine.Random.value > 0.5)
+                        {
+                            SoundSystem.Instance.PlaySound("Cow_Death_1");
+                        } else
+                        {
+                            SoundSystem.Instance.PlaySound("Cow_Death_2");
+                        }
+                        break;
+                    case Type.Pig:
+                        SoundSystem.Instance.PlaySound("Pig_Death_1");
+                        break;
+                }
             }
         }
     }

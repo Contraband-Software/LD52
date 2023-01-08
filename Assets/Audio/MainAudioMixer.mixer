@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-9054916133160831970
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: db1a956f5b2e09642a7ae6aacaa2d63c
+  m_EffectName: Attenuation
+  m_MixLevel: 48da2ecd0fce6774890cd4d7fadbed61
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &-8785650756583313553
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -47,6 +61,39 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!243 &-7215688230250062516
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Cow
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 755ee2f8016fcda4e853723e639563fa
+  m_Children: []
+  m_Volume: 8bc1d8539271dcb4ca86e8a3acbbd924
+  m_Pitch: dbe6c97625ef01c4fa99bbec0f8be280
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -9054916133160831970}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &-7210608056387841706
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: fa93f47b281926640a027db37ffea73c
+  m_EffectName: Attenuation
+  m_MixLevel: b7745aea0f9379c448a60fabf424bcc4
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &-6573780819428196974
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -70,7 +117,9 @@ AudioMixerGroupController:
   m_Name: Animals
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: b20bc3dfbe3f03c4db235fb193b61565
-  m_Children: []
+  m_Children:
+  - {fileID: -7215688230250062516}
+  - {fileID: 2841995318039566470}
   m_Volume: f4275c0fbf6d1f54da4194dc02a134d9
   m_Pitch: 46147975955097847bce8bccef579b01
   m_Send: 00000000000000000000000000000000
@@ -103,6 +152,8 @@ AudioMixerController:
     - 34a3f731d7824404f96d53da1f44be9a
     - b20bc3dfbe3f03c4db235fb193b61565
     - 8e251790ab05bce40a2ebcd2ffca6389
+    - 755ee2f8016fcda4e853723e639563fa
+    - bada1b2f7e7aa48428bec28490b8bc17
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -150,7 +201,13 @@ AudioMixerSnapshotController:
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 297ddce373e17924aa2da72f3b1e0d37
-  m_FloatValues: {}
+  m_FloatValues:
+    c710e6c010b26f145b4e8ff9ff9e4f85: 0.2
+    f8177261bfa9b0647b29319dd9db3f02: 0
+    74e15df25a3de434e9811daff66879b5: -3.1841109
+    8bc1d8539271dcb4ca86e8a3acbbd924: 3.2656908
+    37d663f3f00986d40bc78c2bb9eefb69: 20
+    0c431ceae53fa3a418c9752e5146b67a: 0
   m_TransitionOverrides: {}
 --- !u!243 &1373415031947853237
 AudioMixerGroupController:
@@ -169,6 +226,25 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: -8634867731190569890}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!243 &2841995318039566470
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Pig
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: bada1b2f7e7aa48428bec28490b8bc17
+  m_Children: []
+  m_Volume: 74e15df25a3de434e9811daff66879b5
+  m_Pitch: 3d1a9ab4b97b9654d8f65cc34f376ec1
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -7210608056387841706}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
