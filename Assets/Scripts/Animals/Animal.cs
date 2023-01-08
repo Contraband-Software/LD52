@@ -106,8 +106,8 @@ namespace Architecture.Hazards
 
             moving = true;
             targetPosition = new Vector3(
-                Mathf.Clamp(directionToMove.x * distanceToMove, MoveBounds.x, MoveBounds.z),
-                Mathf.Clamp(directionToMove.y * distanceToMove, MoveBounds.y, MoveBounds.w),
+                Mathf.Clamp(transform.localPosition.x + directionToMove.x * distanceToMove, MoveBounds.x, MoveBounds.z),
+                Mathf.Clamp(transform.localPosition.y + directionToMove.y * distanceToMove, MoveBounds.y, MoveBounds.w),
                 0
             );
         }

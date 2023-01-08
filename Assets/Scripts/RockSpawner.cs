@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using static UnityEditor.PlayerSettings;
 
 namespace Architecture
 {
@@ -12,6 +13,7 @@ namespace Architecture
     public class RockSpawner : MonoBehaviour
     {
         [Header("References")]
+        [SerializeField] Tilemap groundTilemap;
         [SerializeField] Tilemap rockTilemap;
         [SerializeField] Tilemap wheatTileMap;
         [SerializeField] Tile[] rockTiles;
@@ -22,11 +24,27 @@ namespace Architecture
 
         void Awake()
         {
-            BoundsInt bounds = rockTilemap.cellBounds;
+            BoundsInt bounds = groundTilemap.cellBounds;
+            Debug.Log(groundTilemap.origin);
 
-            for (int y = bounds.y; y < bounds.y + bounds.size.y; y++)
+            rockTilemap.SetTile(groundTilemap.origin, rockTiles[0]);
+
+            //for (int y = bounds.y; y < bounds.y + bounds.size.y; y++)
+            //{
+            //    for (int x = bounds.x; x < bounds.x + bounds.size.x; x++)
+            //    {
+            //        if (Random.value > 1 - spawnChancePerTileRow)
+            //        {
+            //            PlaceRock(rockTilemap, new Vector3Int(x, y));
+            //            x++;
+            //            y++;
+            //        }
+            //    }
+            //}
+
+            for (int y = groundTilemap.origin.y; y < groundTilemap.size.y; y++)
             {
-                for (int x = bounds.x; x < bounds.x + bounds.size.x; x++)
+                for (int x = groundTilemap.origin.x; x < groundTilemap.size.x; x++)
                 {
                     if (Random.value > 1 - spawnChancePerTileRow)
                     {
