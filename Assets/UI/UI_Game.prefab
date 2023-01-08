@@ -703,7 +703,6 @@ GameObject:
   - component: {fileID: 8621834431061340094}
   - component: {fileID: 8621834431061340095}
   - component: {fileID: 8621834431061340092}
-  - component: {fileID: 8621834430908088203}
   m_Layer: 5
   m_Name: UI_Game
   m_TagString: UIManager
@@ -814,18 +813,6 @@ MonoBehaviour:
   bloodMaskImage: {fileID: 98744009}
   pauseCanvas: {fileID: 0}
   bloodMaskFadeSpeed: 0.05
---- !u!114 &8621834430908088203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8621834431061340093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dfc684313d63b347bd8ac9ddca52fa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8621834431644720336
 GameObject:
   m_ObjectHideFlags: 0

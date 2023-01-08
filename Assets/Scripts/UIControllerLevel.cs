@@ -28,7 +28,9 @@ namespace Architecture.Managers
 
         private void Start()
         {
+            print("START");
             PauseController.GetReference().PauseEvent.AddListener(ShowPauseMenu);
+            PauseController.GetReference().UnPauseEvent.AddListener(HidePauseMenu);
 
             pauseCanvas.enabled = false;
 
@@ -38,6 +40,12 @@ namespace Architecture.Managers
         private void ShowPauseMenu()
         {
             pauseCanvas.enabled = true;
+        }
+
+        private void HidePauseMenu()
+        {
+            print("HIDING PAUSE MENU");
+            pauseCanvas.enabled = false;
         }
 
         #region HUD_UPDATING

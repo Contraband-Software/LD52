@@ -8,6 +8,10 @@ namespace Architecture.Managers {
     public class PauseController : MonoBehaviour
     {
         public UnityEvent PauseEvent { get; private set; } = new UnityEvent();
+        public UnityEvent UnPauseEvent { get; private set; } = new UnityEvent();
+
+        [Header("Status")]
+        [SerializeField] bool gamePaused = false;
 
         public static PauseController GetReference()
         {
@@ -20,9 +24,26 @@ namespace Architecture.Managers {
 
         private void PauseTheGame()
         {
-            Time.timeScale = 0f;
+            if (!gamePaused)
+            {
+                gamePaused = true;
 
-            PauseEvent.Invoke();
+                Time.timeScale = 0f;
+
+                PauseEvent.Invoke();
+            }
+        }
+
+        public void UnPauseTheGame()
+        {
+            if (gamePaused)
+            {
+                gamePaused = false;
+
+                Time.timeScale = 1f;
+
+                UnPauseEvent.Invoke();
+            }
         }
     }
 
