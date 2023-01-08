@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 4768176161150930589}
   - component: {fileID: 4768176161150930587}
   - component: {fileID: 4768176161150930582}
+  - component: {fileID: 3705521889978046434}
   - component: {fileID: 4768176161150930585}
   - component: {fileID: 3473995788189136852}
   m_Layer: 0
@@ -7498,6 +7499,19 @@ MonoBehaviour:
   wheatDirectionForce: 5
   leftAngleLimit: 0.2
   rightAngleLimit: 0.2
+--- !u!114 &3705521889978046434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4768176161150930591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c22670338ce7a84bad797a2e698a4af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheatField: {fileID: 0}
 --- !u!61 &4768176161150930585
 BoxCollider2D:
   m_ObjectHideFlags: 0
