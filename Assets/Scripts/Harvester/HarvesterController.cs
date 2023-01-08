@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.Events;
 
 #pragma warning disable IDE0090
+#pragma warning disable IDE0079 //suppression warning
 
 namespace Architecture.Harvester
 {
@@ -78,7 +79,7 @@ namespace Architecture.Harvester
             transform.Rotate(-1 * currentHazardSlowDownFactor * turnSpeed * horizontal * Mathf.Abs(vertical) * Vector3.forward);
         }
 
-#pragma warning disable IDE0051
+#pragma warning disable IDE0051 //unused warning (it is used)
         private void Move(InputAction.CallbackContext context)
         {
             if (!controlsLocked)
@@ -176,6 +177,8 @@ namespace Architecture.Harvester
             bladeAnimation.SetFloat("BladeSpeed", 0f);
 
             SoundSystem.Instance.PlaySound("Harvester_Mincing");
+
+            UIControllerLevel.GetReference().ShowBloodMask();
 
             StartCoroutine(PenaltyPeriod());
         }

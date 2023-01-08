@@ -14,13 +14,22 @@ namespace Architecture.Managers
             return GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIControllerLevel>();
         }
 
+        [Header("References")]
         [SerializeField] TextMeshProUGUI percentageDisplayProgress;
         [SerializeField] TextMeshProUGUI percentageDisplayTotal;
         [SerializeField] RectTransform timeLeftBar;
+        [SerializeField] Image bloodMaskImage;
+
+        [Header("Settings")]
+        [SerializeField, Range(0, 0.1f)] float bloodMaskFadeSpeed = 0.05f;
+
+        float currentMaskOpacity = 0;
 
         private void Start()
         {
             PauseController.GetReference().PauseEvent.AddListener(ShowPauseMenu);
+
+            StartCoroutine(FadeMask());
         }
 
         private void ShowPauseMenu()
@@ -43,6 +52,39 @@ namespace Architecture.Managers
             Vector3 s = timeLeftBar.localScale;
             s.y = timeLeftPercent;
             timeLeftBar.localScale = s;
+        }
+        #endregion
+
+        #region BLOODMASK
+        /// <summary>
+        /// Removes the blood mask
+        /// </summary>
+        public void ResetMask()
+        {
+            currentMaskOpacity = 0;
+        }
+
+        /// <summary>
+        /// Shows the blood mask and then fades it out over time
+        /// </summary>
+        public void ShowBloodMask()
+        {
+            currentMaskOpacity = 0.9994f;
+        }
+
+        IEnumerator FadeMask()
+        {
+            while (enabled)
+            {
+                currentMaskOpacity += (currentMaskOpacity - 1) * bloodMaskFadeSpeed;
+                bloodMaskImage.color = new Color(
+                    bloodMaskImage.color.r,
+                    bloodMaskImage.color.g,
+                    bloodMaskImage.color.b,
+                    currentMaskOpacity
+                );
+                yield return new WaitForSeconds(0.01f);
+            }
         }
         #endregion
     }

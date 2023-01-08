@@ -810,6 +810,9 @@ MonoBehaviour:
   percentageDisplayProgress: {fileID: 8621834432000591395}
   percentageDisplayTotal: {fileID: 8621834431644720338}
   timeLeftBar: {fileID: 8017827873047177097}
+  bloodMaskImage: {fileID: 98744009}
+  bloodMaskShowSpeed: 0.2
+  bloodMaskShowTime: 2
 --- !u!1 &8621834431644720336
 GameObject:
   m_ObjectHideFlags: 0

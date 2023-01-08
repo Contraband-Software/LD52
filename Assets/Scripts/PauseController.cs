@@ -31,10 +31,10 @@ namespace Architecture.Managers {
 
         private void CheckForInputs()
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                PauseTheGame();
-            }
+            //if (Input.GetKeyDown(KeyCode.Escape))
+            //{
+            //    PauseTheGame();
+            //}
         }
 
         private void PauseTheGame()
