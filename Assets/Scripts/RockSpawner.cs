@@ -15,6 +15,7 @@ namespace Architecture
         [SerializeField] Tilemap rockTilemap;
         [SerializeField] Tilemap wheatTileMap;
         [SerializeField] Tile[] rockTiles;
+        [SerializeField] GameObject rockGameObject;
 
         [Header("Settings")]
         [SerializeField, Range(0, 1)] float spawnChancePerTileRow = 0.96f;
