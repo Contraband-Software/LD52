@@ -45,8 +45,6 @@ namespace Architecture.Wheat
                 }
             }
 
-            Debug.Log(amountOfWheat);
-
 #if UNITY_EDITOR
             if (harvestedWheatTile == null)
             {
