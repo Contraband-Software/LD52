@@ -14554,7 +14554,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f5a7d1c9d8a575e40a714ab1bf1760be, type: 2}
   - {fileID: 11400000, guid: 6e9ba5fe4e2900a45b183eb72f729ffa, type: 2}
   rockGameObject: {fileID: 2209802244628092795, guid: 6e5d84bb061bcbd498f30340e21c82e3, type: 3}
-  spawnChancePerTileRow: 0.028
+  spawnChancePerTileRow: 0
 --- !u!1 &4768176162178232430
 GameObject:
   m_ObjectHideFlags: 0
