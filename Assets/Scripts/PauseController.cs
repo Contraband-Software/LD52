@@ -6,7 +6,7 @@ using Architecture.Managers;
 
 namespace Architecture.Managers {
     [
-        RequireComponent(typeof(LevelController))
+        RequireComponent(typeof(UIControllerLevel))
     ]
 
     public class PauseController : MonoBehaviour
@@ -17,28 +17,15 @@ namespace Architecture.Managers {
         {
             return GameObject.FindGameObjectWithTag("GameController").GetComponent<PauseController>();
         }
-        // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-            CheckForInputs();
-        }
-
-        private void CheckForInputs()
-        {
-            //if (Input.GetKeyDown(KeyCode.Escape))
-            //{
-            //    PauseTheGame();
-            //}
+            InputHandler.GetReference().KeyPressed_Escape.AddListener(PauseTheGame);
         }
 
         private void PauseTheGame()
         {
+            Time.timeScale = 0f;
+
             PauseEvent.Invoke();
         }
     }

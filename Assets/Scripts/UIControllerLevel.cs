@@ -19,6 +19,7 @@ namespace Architecture.Managers
         [SerializeField] TextMeshProUGUI percentageDisplayTotal;
         [SerializeField] RectTransform timeLeftBar;
         [SerializeField] Image bloodMaskImage;
+        [SerializeField] Canvas pauseCanvas;
 
         [Header("Settings")]
         [SerializeField, Range(0, 0.1f)] float bloodMaskFadeSpeed = 0.05f;
@@ -29,12 +30,14 @@ namespace Architecture.Managers
         {
             PauseController.GetReference().PauseEvent.AddListener(ShowPauseMenu);
 
+            pauseCanvas.enabled = false;
+
             StartCoroutine(FadeMask());
         }
 
         private void ShowPauseMenu()
         {
-            
+            pauseCanvas.enabled = true;
         }
 
         #region HUD_UPDATING
