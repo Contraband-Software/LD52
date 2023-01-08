@@ -27,8 +27,6 @@ namespace Architecture
             BoundsInt bounds = groundTilemap.cellBounds;
             Debug.Log(groundTilemap.origin);
 
-            rockTilemap.SetTile(groundTilemap.origin, rockTiles[0]);
-
             //for (int y = bounds.y; y < bounds.y + bounds.size.y; y++)
             //{
             //    for (int x = bounds.x; x < bounds.x + bounds.size.x; x++)
@@ -62,8 +60,10 @@ namespace Architecture
                 Vector3Int pos = position + new Vector3Int(i % 2, -1 * Mathf.FloorToInt(i / 2.0f));
                 tilemap.SetTile(pos, rockTiles[i]);
                 wheatTileMap.SetTile(pos, null);
-                //Instantiate(rockGameObject);
             }
+
+            GameObject gObject = Instantiate(rockGameObject, rockTilemap.transform);
+            gObject.transform.localPosition = Backend.Utilities.Mult_CWise((Vector3)position - new Vector3(0, 1, 0), tilemap.cellSize);
         }
     }
 }
