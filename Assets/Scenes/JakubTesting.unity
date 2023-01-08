@@ -270,10 +270,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 266212013, guid: 6490d75fec24bde4db1e6aafc8599889, type: 3}
-      propertyPath: spawnChancePerTileRow
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4768176161849923041, guid: 6490d75fec24bde4db1e6aafc8599889, type: 3}
       propertyPath: m_Name
       value: Map
