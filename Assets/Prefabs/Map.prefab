@@ -7710,7 +7710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheatTilemap: {fileID: 4768176161150930586}
-  harvestedWheatTilemap: {fileID: 0}
+  harvestedWheatTilemap: {fileID: 9123962838700091307}
   harvestedWheatTile: {fileID: 11400000, guid: 9a5a1f2346dae7046b136c24ad4a8272, type: 2}
 --- !u!1 &4768176162178232430
 GameObject:
