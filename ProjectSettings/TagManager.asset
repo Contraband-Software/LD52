@@ -8,6 +8,7 @@ TagManager:
   - HarvesterBlade
   - Map
   - UIManager
+  - Rocks
   layers:
   - Default
   - TransparentFX
