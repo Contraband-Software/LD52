@@ -18,6 +18,17 @@ namespace Architecture.Managers
         [SerializeField] TextMeshProUGUI percentageDisplayTotal;
         [SerializeField] RectTransform timeLeftBar;
 
+        private void Start()
+        {
+            PauseController.GetReference().PauseEvent.AddListener(ShowPauseMenu);
+        }
+
+        private void ShowPauseMenu()
+        {
+            
+        }
+
+        #region HUD_UPDATING
         public void SetPercentageTotal(float percentage)
         {
             percentageDisplayTotal.text = Mathf.Ceil(percentage).ToString() + "%";
@@ -33,5 +44,6 @@ namespace Architecture.Managers
             s.y = timeLeftPercent;
             timeLeftBar.localScale = s;
         }
+        #endregion
     }
 }
