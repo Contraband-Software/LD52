@@ -16,7 +16,7 @@ namespace Architecture.Managers
 
         [SerializeField] TextMeshProUGUI percentageDisplayProgress;
         [SerializeField] TextMeshProUGUI percentageDisplayTotal;
-        [SerializeField] TextMeshProUGUI timeLeftDisplay;
+        [SerializeField] RectTransform timeLeftBar;
 
         public void SetPercentageTotal(float percentage)
         {
@@ -27,9 +27,11 @@ namespace Architecture.Managers
         {
             percentageDisplayProgress.text = Mathf.Floor(percentage).ToString();
         }
-        public void UpdateTimeLeft(float timeLeft)
+        public void UpdateTimeLeft(float timeLeftPercent)
         {
-            //timeLeftDisplay.text = timeLeft.ToString();
+            Vector3 s = timeLeftBar.localScale;
+            s.y = timeLeftPercent;
+            timeLeftBar.localScale = s;
         }
     }
 }

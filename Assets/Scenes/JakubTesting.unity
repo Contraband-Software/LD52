@@ -617,6 +617,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelController
       objectReference: {fileID: 0}
+    - target: {fileID: 8633802531341878818, guid: 57b5da1f10d5fa745a0b18254ec69e66, type: 3}
+      propertyPath: percentageGoal
+      value: 45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57b5da1f10d5fa745a0b18254ec69e66, type: 3}
 --- !u!1001 &4204026649564265342
