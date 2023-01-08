@@ -132,10 +132,10 @@ TextureImporter:
       name: UIElementsMenus_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 103
-        width: 49
-        height: 23
+        x: 42
+        y: 136
+        width: 80
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,10 +153,10 @@ TextureImporter:
       name: UIElementsMenus_1
       rect:
         serializedVersion: 2
-        x: 53
-        y: 103
-        width: 24
-        height: 13
+        x: 42
+        y: 112
+        width: 80
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,10 +174,10 @@ TextureImporter:
       name: UIElementsMenus_2
       rect:
         serializedVersion: 2
-        x: 2
-        y: 76
-        width: 80
-        height: 22
+        x: 197
+        y: 112
+        width: 49
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,10 +195,10 @@ TextureImporter:
       name: UIElementsMenus_3
       rect:
         serializedVersion: 2
-        x: 2
-        y: 52
-        width: 80
-        height: 22
+        x: 248
+        y: 112
+        width: 24
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,10 +216,10 @@ TextureImporter:
       name: UIElementsMenus_4
       rect:
         serializedVersion: 2
-        x: 84
-        y: 36
-        width: 36
-        height: 30
+        x: 42
+        y: 88
+        width: 80
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,8 +237,8 @@ TextureImporter:
       name: UIElementsMenus_5
       rect:
         serializedVersion: 2
-        x: 122
-        y: 36
+        x: 124
+        y: 80
         width: 36
         height: 30
       alignment: 0
@@ -258,8 +258,8 @@ TextureImporter:
       name: UIElementsMenus_6
       rect:
         serializedVersion: 2
-        x: 160
-        y: 36
+        x: 162
+        y: 80
         width: 36
         height: 30
       alignment: 0
@@ -279,8 +279,8 @@ TextureImporter:
       name: UIElementsMenus_7
       rect:
         serializedVersion: 2
-        x: 198
-        y: 36
+        x: 200
+        y: 80
         width: 36
         height: 30
       alignment: 0
@@ -300,10 +300,10 @@ TextureImporter:
       name: UIElementsMenus_8
       rect:
         serializedVersion: 2
-        x: 2
-        y: 28
-        width: 80
-        height: 22
+        x: 238
+        y: 80
+        width: 36
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,10 +321,10 @@ TextureImporter:
       name: UIElementsMenus_9
       rect:
         serializedVersion: 2
-        x: 84
-        y: 4
-        width: 36
-        height: 30
+        x: 42
+        y: 64
+        width: 80
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -342,8 +342,8 @@ TextureImporter:
       name: UIElementsMenus_10
       rect:
         serializedVersion: 2
-        x: 122
-        y: 4
+        x: 124
+        y: 48
         width: 36
         height: 30
       alignment: 0
@@ -363,8 +363,8 @@ TextureImporter:
       name: UIElementsMenus_11
       rect:
         serializedVersion: 2
-        x: 160
-        y: 4
+        x: 162
+        y: 48
         width: 36
         height: 30
       alignment: 0
@@ -384,8 +384,8 @@ TextureImporter:
       name: UIElementsMenus_12
       rect:
         serializedVersion: 2
-        x: 198
-        y: 4
+        x: 200
+        y: 48
         width: 36
         height: 30
       alignment: 0
@@ -405,10 +405,10 @@ TextureImporter:
       name: UIElementsMenus_13
       rect:
         serializedVersion: 2
-        x: 2
-        y: 4
-        width: 80
-        height: 22
+        x: 238
+        y: 48
+        width: 36
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -418,6 +418,132 @@ TextureImporter:
       bones: []
       spriteID: ebe698160e1778f44b624991bc56bc45
       internalID: -466561735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UIElementsMenus_14
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 40
+        width: 80
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a614c068e84bba24bbacb6fa9a61ba2f
+      internalID: -88058702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UIElementsMenus_15
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 16
+        width: 36
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23d8820803594714aae56ff73584ef89
+      internalID: 520567723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UIElementsMenus_16
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 16
+        width: 36
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bbd5af9f88b0a945a656df609017c1c
+      internalID: -193129624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UIElementsMenus_17
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 16
+        width: 36
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a03e1772cdaa76a468fa45c097a6895d
+      internalID: -164231367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UIElementsMenus_18
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 16
+        width: 36
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cb51176ba3dfb042bd01f363026fac3
+      internalID: 2115537902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UIElementsMenus_19
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 16
+        width: 80
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89220a65bbdf82e4bb545c9da1f1929f
+      internalID: -1132097674
       vertices: []
       indices: 
       edges: []
@@ -434,10 +560,15 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       UIElementsMenus_5: 1962060752
+      UIElementsMenus_15: 520567723
       UIElementsMenus_9: -1853638752
       UIElementsMenus_13: -466561735
       UIElementsMenus_3: 1958807438
       UIElementsMenus_8: 1686320445
+      UIElementsMenus_16: -193129624
+      UIElementsMenus_18: 2115537902
+      UIElementsMenus_19: -1132097674
+      UIElementsMenus_17: -164231367
       UIElementsMenus_7: -506158403
       UIElementsMenus_1: -1722043460
       UIElementsMenus_0: 571580872
@@ -445,6 +576,7 @@ TextureImporter:
       UIElementsMenus_4: 1616019452
       UIElementsMenus_2: -954447741
       UIElementsMenus_11: -2025509956
+      UIElementsMenus_14: -88058702
       UIElementsMenus_12: 1373609766
       UIElementsMenus_6: 474066373
   spritePackingTag: 
