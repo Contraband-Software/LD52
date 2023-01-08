@@ -44,6 +44,7 @@ namespace Architecture
                 Vector3Int pos = position + new Vector3Int(i % 2, -1 * Mathf.FloorToInt(i / 2.0f));
                 tilemap.SetTile(pos, rockTiles[i]);
                 wheatTileMap.SetTile(pos, null);
+                //Instantiate(rockGameObject);
             }
         }
     }
