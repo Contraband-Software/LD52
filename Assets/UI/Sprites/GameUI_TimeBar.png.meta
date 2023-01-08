@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c3defd909fdb1fc41afd3e1ca9d4e7d0
+guid: 09d3003f5eb9b474888c9f6746eba0a6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,106 +129,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GameUI_0
+      name: GameUI_TimeBar_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 39
+        x: 0
+        y: 16
         width: 16
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 16
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9388c66d89979d24f819fe7f04bc859e
-      internalID: 1033985182
+      spriteID: 8e912e15654c9304fad9343d61977a15
+      internalID: 1111613187
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GameUI_1
+      name: GameUI_TimeBar_1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 55
+        x: 32
+        y: 16
         width: 16
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 16
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07d4f6840548ba5408d4cb95e1f22897
-      internalID: 1240820862
+      spriteID: c6a5f3086a909ef4aa71f2aaf8d72719
+      internalID: 753603543
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GameUI_2
+      name: GameUI_TimeBar_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7e5e2e7c80095d64f89e181a7dbd9eab
-      internalID: -1688422033
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GameUI_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 23
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a7582d2bb2673f40b7891dd2d67f492
-      internalID: 122416744
+      spriteID: 6e518dfd9885d4749b01600589025390
+      internalID: 1668488514
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GameUI_4
+      name: GameUI_TimeBar_3
       rect:
         serializedVersion: 2
-        x: 174
+        x: 16
         y: 0
-        width: 66
-        height: 37
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 16
+        height: 16
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f0084c3c25135a4ab700741b1cafc59
-      internalID: -856522511
+      spriteID: ed7f14c5af7b9964490ad40f511880ad
+      internalID: 329695533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameUI_TimeBar_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78294fcc22b951e4eb05ebd9c3c79856
+      internalID: 256558307
       vertices: []
       indices: 
       edges: []
@@ -244,11 +244,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      GameUI_4: -856522511
-      GameUI_3: 122416744
-      GameUI_0: 1033985182
-      GameUI_2: -1688422033
-      GameUI_1: 1240820862
+      GameUI_TimeBar_3: 329695533
+      GameUI_TimeBar_1: 753603543
+      GameUI_TimeBar_0: 1111613187
+      GameUI_TimeBar_2: 1668488514
+      GameUI_TimeBar_4: 256558307
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

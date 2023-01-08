@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c3defd909fdb1fc41afd3e1ca9d4e7d0
+guid: 51f352d3a9bd55f4d96739a2bddbd4be
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,106 +129,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GameUI_0
+      name: GameUI_Images_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 39
-        width: 16
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9388c66d89979d24f819fe7f04bc859e
-      internalID: 1033985182
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GameUI_1
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 55
-        width: 16
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 07d4f6840548ba5408d4cb95e1f22897
-      internalID: 1240820862
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GameUI_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
+        x: 6
+        y: 2
         width: 32
         height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e5e2e7c80095d64f89e181a7dbd9eab
-      internalID: -1688422033
+      spriteID: 74a8c29655e31de4ca7c169a00dbe730
+      internalID: 1802313106
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GameUI_3
+      name: GameUI_Images_1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 23
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a7582d2bb2673f40b7891dd2d67f492
-      internalID: 122416744
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GameUI_4
-      rect:
-        serializedVersion: 2
-        x: 174
+        x: 46
         y: 0
         width: 66
         height: 37
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f0084c3c25135a4ab700741b1cafc59
-      internalID: -856522511
+      spriteID: 84495256830116c478dfe049bc2245d9
+      internalID: -1960309088
       vertices: []
       indices: 
       edges: []
@@ -244,11 +181,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      GameUI_4: -856522511
-      GameUI_3: 122416744
-      GameUI_0: 1033985182
-      GameUI_2: -1688422033
-      GameUI_1: 1240820862
+      GameUI_Images_0: 1802313106
+      GameUI_Images_1: -1960309088
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
