@@ -14,20 +14,22 @@ namespace Architecture.Managers
 
         [Header("Settings")]
         [SerializeField, Min(0)] int timeLimitSeconds = 120;
+        [SerializeField, Min(40)] int percentageGoal = 40;
 
         float timeLeft;
 
         private void Start()
         {
             timeLeft = timeLimitSeconds;
+            UIControllerLevel.GetReference().SetPercentageTotal(percentageGoal);
         }
 
         void Update()
         {
             timeLeft -= Time.deltaTime;
 
-            UIController.GetReference().UpdateTimeLeft(timeLeft);
-            UIController.GetReference().UpdatePercentageHarvested(Wheat.WheatFieldManager.GetReference().GetPercentageHarvested());
+            UIControllerLevel.GetReference().UpdateTimeLeft(timeLeft);
+            UIControllerLevel.GetReference().UpdatePercentageHarvested(Wheat.WheatFieldManager.GetReference().GetPercentageHarvested());
         }
     }
 }

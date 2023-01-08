@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebfcc358febf2324b85e06abf6e6576b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimitSeconds: 120
+  timeLimitSeconds: 30
+  percentageGoal: 40

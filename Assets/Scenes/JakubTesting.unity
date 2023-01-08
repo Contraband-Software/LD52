@@ -617,10 +617,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelController
       objectReference: {fileID: 0}
-    - target: {fileID: 8633802531341878818, guid: 57b5da1f10d5fa745a0b18254ec69e66, type: 3}
-      propertyPath: timeLimitSeconds
-      value: 30
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57b5da1f10d5fa745a0b18254ec69e66, type: 3}
 --- !u!1001 &4204026649564265342
@@ -752,14 +748,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8621834430847930638, guid: 45082070c3a44b24aa959332165235dd, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8621834430946863679, guid: 45082070c3a44b24aa959332165235dd, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8621834431061340080, guid: 45082070c3a44b24aa959332165235dd, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -847,10 +835,6 @@ PrefabInstance:
     - target: {fileID: 8621834431061340093, guid: 45082070c3a44b24aa959332165235dd, type: 3}
       propertyPath: m_Name
       value: UI_Game
-      objectReference: {fileID: 0}
-    - target: {fileID: 8621834431061340093, guid: 45082070c3a44b24aa959332165235dd, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45082070c3a44b24aa959332165235dd, type: 3}
