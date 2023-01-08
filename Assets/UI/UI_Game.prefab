@@ -270,7 +270,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b566ce1413eb2e94992aeb512cffb09f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  percentageDisplay: {fileID: 0}
+  percentageDisplayProgress: {fileID: 8621834432000591395}
+  percentageDisplayTotal: {fileID: 8621834431644720338}
   timeLeftDisplay: {fileID: 0}
 --- !u!1 &8621834431644720336
 GameObject:

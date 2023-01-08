@@ -14,12 +14,14 @@ namespace Architecture.Managers
 
         [Header("Settings")]
         [SerializeField, Min(0)] int timeLimitSeconds = 120;
+        [SerializeField, Min(40)] int percentageGoal = 40;
 
         float timeLeft;
 
         private void Start()
         {
             timeLeft = timeLimitSeconds;
+            UIControllerLevel.GetReference().SetPercentageTotal(percentageGoal);
         }
 
         void Update()

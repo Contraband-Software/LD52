@@ -20,16 +20,16 @@ namespace Architecture.Managers
 
         public void SetPercentageTotal(float percentage)
         {
-            percentageDisplayTotal.text = percentage.ToString() + "%";
+            percentageDisplayTotal.text = Mathf.Ceil(percentage).ToString() + "%";
         }
 
         public void UpdatePercentageHarvested(float percentage)
         {
-            percentageDisplayProgress.text = percentage.ToString();
+            percentageDisplayProgress.text = Mathf.Floor(percentage).ToString();
         }
         public void UpdateTimeLeft(float timeLeft)
         {
-            timeLeftDisplay.text = timeLeft.ToString();
+            //timeLeftDisplay.text = timeLeft.ToString();
         }
     }
 }
