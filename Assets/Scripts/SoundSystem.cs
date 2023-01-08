@@ -4,10 +4,11 @@ using UnityEngine;
 using System;
 using Unity.VisualScripting;
 
-namespace Architecture
+namespace Architecture.Managers
 {
     [
-        RequireComponent(typeof(AudioSource))
+        RequireComponent(typeof(AudioSource)),
+        DisallowMultipleComponent
     ]
     public class SoundSystem : Backend.AbstractSingleton<SoundSystem>
     {

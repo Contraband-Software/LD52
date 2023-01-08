@@ -6,10 +6,12 @@ using UnityEngine.InputSystem;
 namespace Architecture.Harvester
 {
     using Wheat;
+    using Managers;
 
     [
         RequireComponent(typeof(Rigidbody2D)),
-        RequireComponent(typeof(PlayerInput))
+        RequireComponent(typeof(PlayerInput)),
+        DisallowMultipleComponent
     ]
     public class HarvesterController : MonoBehaviour
     {
@@ -17,7 +19,7 @@ namespace Architecture.Harvester
         [SerializeField] BoxCollider2D bladesCollider;
 
         [Header("Wheat Collision")]
-        [SerializeField] WheatCollision wheatCollisionScript;
+        [SerializeField] WheatFieldManager wheatCollisionScript;
         [SerializeField] LayerMask collideOnlyWithHarvesterBlade;
 
         [Header("Particle Effects")]

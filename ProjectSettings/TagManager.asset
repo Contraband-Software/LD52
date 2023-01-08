@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Wheat
   - HarvesterBlade
+  - Map
+  - UIManager
   layers:
   - Default
   - TransparentFX

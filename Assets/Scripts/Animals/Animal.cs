@@ -2,15 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Scripting.APIUpdating;
 using UnityEngine.Rendering.Universal;
-using static UnityEngine.GraphicsBuffer;
 
 namespace Architecture.Hazards
 {
+    using Managers;
+
     [
         RequireComponent(typeof(BoxCollider2D)),
-        //RequireComponent(typeof(Rigidbody2D))
+        DisallowMultipleComponent
     ]
     public class Animal : MonoBehaviour
     {
