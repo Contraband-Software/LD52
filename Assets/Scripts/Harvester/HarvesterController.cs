@@ -14,6 +14,7 @@ namespace Architecture.Harvester
     [
         RequireComponent(typeof(Rigidbody2D)),
         RequireComponent(typeof(PlayerInput)),
+        RequireComponent(typeof(Animator)),
         DisallowMultipleComponent
     ]
     public class HarvesterController : MonoBehaviour
@@ -29,6 +30,7 @@ namespace Architecture.Harvester
 
         [Header("Self Component References")]
         [SerializeField] BoxCollider2D bladesCollider;
+        Animator anim;
 
         [Header("Wheat Collision")]
         [SerializeField] WheatFieldManager wheatCollisionScript;
@@ -136,6 +138,7 @@ namespace Architecture.Harvester
             HarvesterDestroyed.Invoke();
 
             // STOP ANIMATION HERE
+            anim.SetFloat("BladeSpeed", 0f);
 
             SoundSystem.Instance.PlaySound("Harvester_Breakdown");
         }
@@ -145,6 +148,7 @@ namespace Architecture.Harvester
             meatEjectPFX.Play();
 
             // STOP ANIMATION HERE
+            anim.SetFloat("BladeSpeed", 0f);
 
             SoundSystem.Instance.PlaySound("Harvester_Mincing");
 
@@ -167,6 +171,7 @@ namespace Architecture.Harvester
         IEnumerator BackToNormal()
         {
             // PLAY ANIMATION HERE
+            anim.SetFloat("BladeSpeed", 1f);
 
             while (Mathf.Abs(1 - currentHazardSlowDownFactor) > 0.05f)
             {
