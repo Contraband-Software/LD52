@@ -19,9 +19,8 @@ public class InputHandler : MonoBehaviour
 
 #pragma warning disable IDE0051 //unused warning (it is used)
     //ESCAPE KEY
-    private void Pause(InputAction.CallbackContext context)
+    public void Pause(InputAction.CallbackContext context)
     {
-        print("ESCAPE PRESSED");
         KeyPressed_Escape.Invoke();
     }
 #pragma warning restore IDE0051

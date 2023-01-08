@@ -9913,8 +9913,8 @@ GameObject:
   - component: {fileID: 7873533908172215098}
   - component: {fileID: 7873533908172215100}
   - component: {fileID: 7873533908172215096}
-  - component: {fileID: 7873533908172215103}
   - component: {fileID: 2866240865458231737}
+  - component: {fileID: 7873533908172215103}
   - component: {fileID: 711508907}
   m_Layer: 0
   m_Name: Harvester
@@ -10087,6 +10087,18 @@ MonoBehaviour:
   penaltyTimeInSeconds: 7.15
   hazardSlowdownFactor: 0.18
   hazardEffectOnSpeed: 200.51
+--- !u!114 &2866240865458231737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7873533908172215099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 871c799f9f32da942b18af4650923e3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7873533908172215103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10177,26 +10189,26 @@ MonoBehaviour:
     m_ActionId: 5e88fcb1-ead3-4395-b760-b2be689cffa6
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 3d0cacbb-f8c4-4341-bd1e-fc1145055866
-    m_ActionName: UI/Pause[/Keyboard/escape]
+      m_Calls:
+      - m_Target: {fileID: 2866240865458231737}
+        m_TargetAssemblyTypeName: InputHandler, Assembly-CSharp
+        m_MethodName: Pause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 692e1873-ce83-42cb-97d0-af66480fcbaf
+    m_ActionName: Player/Pause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &2866240865458231737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7873533908172215099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 871c799f9f32da942b18af4650923e3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &711508907
 BoxCollider2D:
   m_ObjectHideFlags: 0
