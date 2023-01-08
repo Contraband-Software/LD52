@@ -71,6 +71,8 @@ namespace Architecture.Wheat
             wheatTilemap.SetTile(tilePos, null);
             harvestedWheatTilemap.SetTile(tilePos, harvestedWheatTile);
             wheatHarvested++;
+
+            Managers.SoundSystem.Instance.PlaySound("Wheat_Harvest", true);
         }
 
         public float GetPercentageHarvested()
