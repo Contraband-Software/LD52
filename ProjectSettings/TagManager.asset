@@ -9,6 +9,7 @@ TagManager:
   - Map
   - UIManager
   - Rocks
+  - MainMenuController
   layers:
   - Default
   - TransparentFX

@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Prototyping/WheatTestingScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/MainMenu.unity
+    guid: b4bc0340d709e9d4b8d15d00ada215b3
+  - enabled: 1
+    path: Assets/Scenes/BadEnding.unity
+    guid: 45ce3dfc2c8d6784ca3a98c46940aaee
+  - enabled: 1
+    path: Assets/Scenes/Level_1.unity
+    guid: 5d32be0b0e486a446a7a2996b9c99184
   m_configObjects: {}
