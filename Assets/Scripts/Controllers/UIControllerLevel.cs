@@ -102,6 +102,8 @@ namespace Architecture.Managers
                     pauseCanvas.enabled = false;
                     levelFailCanvas.enabled = false;
                     levelCompleteCanvas.enabled = true;
+
+                    GameController.Instance.CompleteLevel();
                     break;
             }
 
@@ -138,7 +140,7 @@ namespace Architecture.Managers
 
         public void Continue()
         {
-            GameController.Instance.CompleteLevel();
+            GameController.Instance.GotoCurrent();
 
             //BlackFilter
             FadeInBlackOverlay();
