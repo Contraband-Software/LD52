@@ -41,10 +41,7 @@ namespace Architecture.Wheat
         {
             grid = GetComponent<Grid>();
 
-            BoundsInt bounds = wheatTilemap.cellBounds;
-            TileBase[] allTiles = wheatTilemap.GetTilesBlock(bounds);
-
-            //Debug.Log("Space: " + groundTilemap.cellBounds.ToString());
+            BoundsInt bounds = groundTilemap.cellBounds;
 
 #if UNITY_EDITOR
 #pragma warning disable S112
@@ -57,12 +54,11 @@ namespace Architecture.Wheat
 
             GenerateWheatField();
 
-            for (int y = 0; y < bounds.size.y; y++)
+            for (int y = bounds.y; y < bounds.y + bounds.size.y; y++)
             {
-                for (int x = 0; x < bounds.size.x; x++)
+                for (int x = bounds.x; x < bounds.x + bounds.size.x; x++)
                 {
-                    TileBase tile = allTiles[x + y * bounds.size.x];
-                    if (tile != null)
+                    if (wheatTilemap.GetTile<RuleTile>(new Vector3Int(x, y)) == wheatTile)
                     {
                         amountOfWheat++;
                     }
@@ -147,6 +143,8 @@ namespace Architecture.Wheat
             wheatTilemap.SetTile(tilePos, null);
             harvestedWheatTilemap.SetTile(tilePos, harvestedWheatTile);
             wheatHarvested++;
+
+            Debug.Log(wheatHarvested.ToString() + " / " + amountOfWheat.ToString());
 
             Managers.SoundSystem.Instance.PlaySound("Wheat_Harvest", true);
         }

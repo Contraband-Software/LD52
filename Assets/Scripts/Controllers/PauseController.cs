@@ -36,7 +36,6 @@ namespace Architecture.Managers {
 
         public void UnPauseTheGame()
         {
-            Debug.Log(GamePaused);
             if (GamePaused)
             {
                 GamePaused = false;
