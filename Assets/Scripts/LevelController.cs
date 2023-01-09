@@ -18,6 +18,11 @@ namespace Architecture.Managers
 
         float timeLeft;
 
+        private void Awake()
+        {
+            SoundSystem.Instance.PlayMusic("Game");
+        }
+
         private void Start()
         {
             timeLeft = timeLimitSeconds;
