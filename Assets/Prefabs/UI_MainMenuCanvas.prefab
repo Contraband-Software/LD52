@@ -235,6 +235,8 @@ MonoBehaviour:
   continueButton: {fileID: 5939817649459525676}
   blackOverlay: {fileID: 3282524770544801130}
   blackOverlayAnim: {fileID: 5286963442399946870}
+  backgroundImage: {fileID: 1029033433}
+  foggyBackground: {fileID: 21300000, guid: c4c6e724ec32ff044b6b59ba3461a9a8, type: 3}
 --- !u!1 &5896241711339654811
 GameObject:
   m_ObjectHideFlags: 0
