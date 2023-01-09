@@ -56,17 +56,12 @@ namespace Architecture.Managers
 
         void Update()
         {
-            timeLeft -= Time.deltaTime;
-            if(timeLeft <= 0f)
-            {
-                timeLeft = 0f;
-                TimeRanOut();
-            }
             UIControllerLevel.GetReference().UpdateTimeLeft(timeLeft / timeLimitSeconds);
             UIControllerLevel.GetReference().UpdatePercentageHarvested(Wheat.WheatFieldManager.GetReference().GetPercentageHarvested());
 
             if (timeLeft <= 0f)
             {
+                timeLeft = 0f;
                 Harvester.HarvesterController.GetReference().LockControls(true);
 
                 if (Mathf.RoundToInt(Wheat.WheatFieldManager.GetReference().GetPercentageHarvested()) == 100)
@@ -76,13 +71,14 @@ namespace Architecture.Managers
                 else if (Wheat.WheatFieldManager.GetReference().GetPercentageHarvested() >= percentageGoal)
                 {
                     GameOverEvent.Invoke(GameOverReason.Success_RequiredWheat);
+                } else
+                {
+                    GameOverEvent.Invoke(GameOverReason.Fail_Time);
                 }
+            } else
+            {
+                timeLeft -= Time.deltaTime;
             }
-        }
-
-        void TimeRanOut()
-        {
-            GameOverEvent.Invoke(GameOverReason.Fail_Time);
         }
 
         public void RestartLevel()
