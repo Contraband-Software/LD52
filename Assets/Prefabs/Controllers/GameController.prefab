@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5248218cd47427545ab434723b11dba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameLevel1Offset: 1
+  gameLevel1Offset: 2
   mainMenuSceneName: MainMenu
   endOfLevelsSceneName: BadEnding
