@@ -7,9 +7,15 @@ namespace Architecture.Managers
 {
     public class MainMenuController : MonoBehaviour
     {
+        public static MainMenuController GetReference()
+        {
+            return GameObject.FindGameObjectWithTag("MainMenuController").GetComponent<MainMenuController>();
+        }
+
         [Header("UI Elements")]
         [SerializeField] GameObject continueButton;
         [SerializeField] CanvasGroup blackOverlay;
+        [SerializeField] Animator blackOverlayAnim;
 
 
         // Start is called before the first frame update
@@ -31,11 +37,27 @@ namespace Architecture.Managers
         public void ContinueGame()
         {
             //Load next level, disable scene activation
-            GameController.Instance.SceneLoadingOperation.allowSceneActivation = false;
             GameController.Instance.ContinueGame();
+            GameController.Instance.SceneLoadingOperation.allowSceneActivation = false;
 
             //
             blackOverlay.blocksRaycasts = true;
+            blackOverlayAnim.Play("FadeInBlack");
+        }
+
+        public void NewGame()
+        {
+            //Load next level, disable scene activation
+            GameController.Instance.StartNewGame();
+            GameController.Instance.SceneLoadingOperation.allowSceneActivation = false;
+            //
+            blackOverlay.blocksRaycasts = true;
+            blackOverlayAnim.Play("FadeInBlack");
+        }
+
+        public void FadeInBlackCompleted()
+        {
+            GameController.Instance.SceneLoadingOperation.allowSceneActivation = true;
         }
     }
 }

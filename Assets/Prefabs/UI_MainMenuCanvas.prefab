@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 8851902745465444271}
   m_Layer: 5
   m_Name: UI_MainMenuCanvas
-  m_TagString: Untagged
+  m_TagString: MainMenuController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -232,7 +232,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3af3a20dcead814479d0d1a9f256a07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  continueButton: {fileID: 0}
+  continueButton: {fileID: 5939817649459525676}
+  blackOverlay: {fileID: 3282524770544801130}
+  blackOverlayAnim: {fileID: 5286963442399946870}
 --- !u!1 &5896241711339654811
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,9 +394,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Architecture.Managers.PauseController, Assembly-CSharp
-        m_MethodName: UnPauseTheGame
+      - m_Target: {fileID: 8851902745465444271}
+        m_TargetAssemblyTypeName: Architecture.Managers.MainMenuController, Assembly-CSharp
+        m_MethodName: ContinueGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -492,6 +494,8 @@ GameObject:
   - component: {fileID: 7006437837547384208}
   - component: {fileID: 4582475265651707192}
   - component: {fileID: 3282524770544801130}
+  - component: {fileID: 5286963442399946870}
+  - component: {fileID: 1568547959}
   m_Layer: 5
   m_Name: BlackOverlay
   m_TagString: Untagged
@@ -569,6 +573,38 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!95 &5286963442399946870
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6273892928923018276}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d46ca307759209c43b933b173b33d50b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1568547959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6273892928923018276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c4336aef7878eb49af64a38aaa22bf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7394696880961416981
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,7 +725,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1921070507965740608}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8851902745465444271}
+        m_TargetAssemblyTypeName: Architecture.Managers.MainMenuController, Assembly-CSharp
+        m_MethodName: NewGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7407449983535337015
 GameObject:
   m_ObjectHideFlags: 0
