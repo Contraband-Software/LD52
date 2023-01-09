@@ -24,7 +24,7 @@ namespace Architecture.Managers
 
         private void LoadCurrentLevel()
         {
-            SceneLoadingOperation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + Level + gameLevel1Offset);
+            SceneLoadingOperation = SceneManager.LoadSceneAsync(Level + gameLevel1Offset);
             SceneLoadingOperation.allowSceneActivation = true;
         }
 
@@ -38,16 +38,20 @@ namespace Architecture.Managers
                 throw new System.InvalidOperationException("GameController: You can only use this function in a game level");
             }
 #endif
+            Level++;
+        }
 
-            if (Level++ == SceneManager.sceneCountInBuildSettings)
+        public void GotoCurrent()
+        {
+            if (Level == SceneManager.sceneCountInBuildSettings)
             {
                 SceneLoadingOperation = SceneManager.LoadSceneAsync(endOfLevelsSceneName);
-            } else
+            }
+            else
             {
                 LoadCurrentLevel();
             }
         }
-
         public void LeaveLevel()
         {
             SceneLoadingOperation = SceneManager.LoadSceneAsync(mainMenuSceneName);

@@ -45,6 +45,7 @@ namespace Architecture.Managers
         {
             Harvester.HarvesterController.GetReference().HarvesterDestroyed.AddListener(() =>
             {
+                HaltGame();
                 GameOverEvent.Invoke(GameOverReason.Fail_HarvesterExploded);
             });
         }
@@ -53,6 +54,12 @@ namespace Architecture.Managers
         {
             timeLeft = timeLimitSeconds;
             UIControllerLevel.GetReference().SetPercentageTotal(percentageGoal);
+        }
+
+        private void HaltGame()
+        {
+            gameOver = true;
+            Harvester.HarvesterController.GetReference().LockControls(true);
         }
 
         void Update()
@@ -70,9 +77,8 @@ namespace Architecture.Managers
 #endif
                 if (timeLeft <= 0f)
                 {
+                    HaltGame();
                     timeLeft = 0f;
-                    gameOver = true;
-                    Harvester.HarvesterController.GetReference().LockControls(true);
 
                     if (Mathf.RoundToInt(Wheat.WheatFieldManager.GetReference().GetPercentageHarvested()) == 100)
                     {
