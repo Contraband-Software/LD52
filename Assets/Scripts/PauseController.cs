@@ -5,6 +5,7 @@ using UnityEngine.Events;
 using Architecture.Managers;
 
 namespace Architecture.Managers {
+    [DisallowMultipleComponent]
     public class PauseController : MonoBehaviour
     {
         public UnityEvent PauseEvent { get; private set; } = new UnityEvent();
