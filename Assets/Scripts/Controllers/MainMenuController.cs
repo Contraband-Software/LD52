@@ -25,10 +25,16 @@ namespace Architecture.Managers
         [SerializeField] Sprite foggyBackground;
 
 
+        private void Awake()
+        {
+            //reset sounds
+            SoundSystem.Instance.StopAllSounds();
+            SoundSystem.Instance.PlayMusic("Game");
+        }
+
         // Start is called before the first frame update
         void Start()
         {
-
             //disables the continue button if no level to
             //continue from
             if(GameController.Instance.Level == 0)

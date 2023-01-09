@@ -41,7 +41,6 @@ namespace Architecture.Managers
 
         private void Awake()
         {
-            SoundSystem.Instance.PlayMusic("Game");
             Harvester.HarvesterController.GetReference().HarvesterDestroyed.AddListener(() =>
             {
                 GameOverEvent.Invoke(GameOverReason.Fail_HarvesterExploded);
