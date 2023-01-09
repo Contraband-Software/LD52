@@ -32,7 +32,7 @@ MonoBehaviour:
   - dependency: {fileID: 2800000, guid: 2fd6421f253b4ef1a19526541f9ffc0c, type: 3}
     instantiationMode: 1
   - dependency: {fileID: 585968426982237881, guid: e15244a6bfa8de344b2b0b3a7ee25c02, type: 3}
-    instantiationMode: 0
+    instantiationMode: 1
   - dependency: {fileID: 2800000, guid: 78b5b22b76dd1a543a6a0eb2640ffa0b, type: 3}
     instantiationMode: 1
   - dependency: {fileID: 2800000, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
@@ -148,4 +148,4 @@ MonoBehaviour:
   - dependency: {fileID: 2100000, guid: 56f716578c418df4a8bfeaa6de52df9a, type: 2}
     instantiationMode: 1
   templatePipeline: {fileID: 0}
-  addToDefaults: 0
+  addToDefaults: 1

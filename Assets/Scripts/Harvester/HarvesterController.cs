@@ -166,6 +166,8 @@ namespace Architecture.Harvester
         public void LockControls(bool status)
         {
             controlsLocked = status;
+            horizontal = 0;
+            vertical = 0;
         }
 
         /// <summary>
