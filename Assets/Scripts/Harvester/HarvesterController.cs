@@ -39,6 +39,7 @@ namespace Architecture.Harvester
         [SerializeField] BladePFXController bladePFXController;
         [SerializeField] ParticleSystem wheatEjectPFX;
         [SerializeField] ParticleSystem meatEjectPFX;
+        [SerializeField] ParticleSystem deathExplosionPFX;
 
         [Header("Settings")]
         [SerializeField, Min(0)] float acceleration = 8f;
@@ -153,6 +154,7 @@ namespace Architecture.Harvester
             Penalty = true;
 
             LockControls(true);
+            deathExplosionPFX.Play();
 
             HarvesterDestroyed.Invoke();
         }
