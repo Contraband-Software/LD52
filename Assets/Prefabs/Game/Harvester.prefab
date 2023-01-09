@@ -351,7 +351,7 @@ MonoBehaviour:
   - {x: -6.5781136, y: 8.403488, z: 0}
   m_ShapePathHash: -1118046451
   m_Mesh: {fileID: 0}
-  m_InstanceId: -779782
+  m_InstanceId: -357738
 --- !u!1 &1436952086
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,7 +1160,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 1.5, y: 1.5, z: 1}
+    m_Scale: {x: 2, y: 2, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -1468,8 +1468,8 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 3
-        scalar: 90
-        minScalar: 70
+        scalar: 110
+        minScalar: 90
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -1518,7 +1518,7 @@ ParticleSystem:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-      cycleCount: 4
+      cycleCount: 5
       repeatInterval: 0.25
       probability: 1
   SizeModule:
@@ -16294,7 +16294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6748823307848234222, guid: 9456b1e648d6a694aa04b5af4ded1a6f, type: 3}
       propertyPath: m_SortingOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6748823307848234222, guid: 9456b1e648d6a694aa04b5af4ded1a6f, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -16362,7 +16362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6748823307848234223, guid: 9456b1e648d6a694aa04b5af4ded1a6f, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 100
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 6748823307848234223, guid: 9456b1e648d6a694aa04b5af4ded1a6f, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
@@ -16374,15 +16374,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6748823307848234223, guid: 9456b1e648d6a694aa04b5af4ded1a6f, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.03137255
+      value: 0.51041293
       objectReference: {fileID: 0}
     - target: {fileID: 6748823307848234223, guid: 9456b1e648d6a694aa04b5af4ded1a6f, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.9058824
+      value: 0.8646504
       objectReference: {fileID: 0}
     - target: {fileID: 6748823307848234223, guid: 9456b1e648d6a694aa04b5af4ded1a6f, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.93725497
+      value: 0.8773585
       objectReference: {fileID: 0}
     - target: {fileID: 6748823307848234223, guid: 9456b1e648d6a694aa04b5af4ded1a6f, type: 3}
       propertyPath: InitialModule.startColor.minColor.b
