@@ -567,10 +567,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fog
       objectReference: {fileID: 0}
-    - target: {fileID: 4204026649816042449, guid: fb94df27d1897b14693c4fa653ef5c60, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb94df27d1897b14693c4fa653ef5c60, type: 3}
 --- !u!1001 &6270116759070783931
@@ -747,6 +743,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 98744008, guid: 45082070c3a44b24aa959332165235dd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.20751953
+      objectReference: {fileID: 0}
     - target: {fileID: 8621834431061340080, guid: 45082070c3a44b24aa959332165235dd, type: 3}
       propertyPath: m_Pivot.x
       value: 0
