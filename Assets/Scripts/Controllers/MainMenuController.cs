@@ -45,7 +45,7 @@ namespace Architecture.Managers
             else
             {
                 backgroundImage.sprite = foggyBackground;
-                levelText.text = "Level:" + GameController.Instance.Level.ToString();
+                levelText.text = "Level:" + (GameController.Instance.Level +1).ToString();
             }
 
             blackOverlay.blocksRaycasts = false;
