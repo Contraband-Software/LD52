@@ -205,7 +205,7 @@ namespace Architecture.Harvester
             {
                 currentHazardSlowDownFactor += (1 - currentHazardSlowDownFactor) / hazardEffectOnSpeed;
                 bladeAnimation.SetFloat("BladeSpeed", currentHazardSlowDownFactor);
-                yield return new WaitForEndOfFrame();
+                yield return new WaitForSecondsRealtime(0.01f);
             }
 
             Penalty = false;

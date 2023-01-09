@@ -9953,7 +9953,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &7873533908172215101
 BoxCollider2D:
@@ -10066,7 +10066,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bladesCollider: {fileID: 7873533908132355826}
-  wheatCollisionScript: {fileID: 0}
   collideOnlyWithHarvesterBlade:
     serializedVersion: 2
     m_Bits: 128
@@ -10075,7 +10074,7 @@ MonoBehaviour:
   meatEjectPFX: {fileID: 8900248243554872605}
   acceleration: 66
   turnSpeed: 2.73
-  penaltyTimeInSeconds: 7.15
+  penaltyTimeInSeconds: 3.95
   hazardSlowdownFactor: 0.18
   hazardEffectOnSpeed: 200.51
 --- !u!114 &2866240865458231737
@@ -10213,7 +10212,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.064617634, y: 3.4851277}
+  m_Offset: {x: -0.064617634, y: 3.4931881}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -10224,7 +10223,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 9.019935, y: 0.9047446}
+  m_Size: {x: 9.019935, y: 0.92086554}
   m_EdgeRadius: 0
 --- !u!1 &7873533908756092629
 GameObject:
