@@ -56,7 +56,8 @@ namespace Architecture.Managers
 
         public void Restart()
         {
-            LoadCurrentLevel();
+            SceneLoadingOperation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+            SceneLoadingOperation.allowSceneActivation = true;
         }
         #endregion
 
