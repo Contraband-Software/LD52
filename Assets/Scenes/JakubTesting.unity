@@ -141,6 +141,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5035201868929386099, guid: 6bc1b1b287fcf5441b03dce29f30a517, type: 3}
+      propertyPath: m_Pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5035201868943930329, guid: 6bc1b1b287fcf5441b03dce29f30a517, type: 3}
+      propertyPath: m_Pitch
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035201869336231285, guid: 6bc1b1b287fcf5441b03dce29f30a517, type: 3}
       propertyPath: m_Name
       value: AudioManager
