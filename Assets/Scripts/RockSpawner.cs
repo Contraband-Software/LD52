@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using static UnityEditor.PlayerSettings;
 
 namespace Architecture
 {
@@ -24,8 +23,8 @@ namespace Architecture
 
         void Awake()
         {
-            BoundsInt bounds = groundTilemap.cellBounds;
-            Debug.Log(groundTilemap.origin);
+            //BoundsInt bounds = groundTilemap.cellBounds;
+            //Debug.Log(groundTilemap.origin);
 
             //for (int y = bounds.y; y < bounds.y + bounds.size.y; y++)
             //{

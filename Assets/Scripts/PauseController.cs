@@ -5,13 +5,13 @@ using UnityEngine.Events;
 using Architecture.Managers;
 
 namespace Architecture.Managers {
+    [DisallowMultipleComponent]
     public class PauseController : MonoBehaviour
     {
         public UnityEvent PauseEvent { get; private set; } = new UnityEvent();
         public UnityEvent UnPauseEvent { get; private set; } = new UnityEvent();
 
-        [Header("Status")]
-        [SerializeField] bool gamePaused = false;
+        public bool GamePaused { get; private set; } = false;
 
         public static PauseController GetReference()
         {
@@ -22,11 +22,11 @@ namespace Architecture.Managers {
             InputHandler.GetReference().KeyPressed_Escape.AddListener(PauseTheGame);
         }
 
-        private void PauseTheGame()
+        public void PauseTheGame()
         {
-            if (!gamePaused)
+            if (!GamePaused)
             {
-                gamePaused = true;
+                GamePaused = true;
 
                 Time.timeScale = 0f;
 
@@ -36,9 +36,9 @@ namespace Architecture.Managers {
 
         public void UnPauseTheGame()
         {
-            if (gamePaused)
+            if (GamePaused)
             {
-                gamePaused = false;
+                GamePaused = false;
 
                 Time.timeScale = 1f;
 
