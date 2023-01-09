@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameLevel1Offset: 1
   mainMenuSceneName: MainMenu
-  endOfLevelsSceneName: MainMenu
+  endOfLevelsSceneName: BadEnding
