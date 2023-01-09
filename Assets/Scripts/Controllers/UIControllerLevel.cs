@@ -9,6 +9,17 @@ namespace Architecture.Managers
     [DisallowMultipleComponent]
     public class UIControllerLevel : MonoBehaviour
     {
+        public enum State
+        {
+            Playing,
+            Paused,
+            LevelFail,
+            LevelComplete
+        }
+
+        public State UIState { get ; private set; } = State.Playing;
+        public string GameOverMessage { get; private set; } = "";
+
         public static UIControllerLevel GetReference()
         {
             return GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIControllerLevel>();
@@ -19,7 +30,10 @@ namespace Architecture.Managers
         [SerializeField] TextMeshProUGUI percentageDisplayTotal;
         [SerializeField] RectTransform timeLeftBar;
         [SerializeField] Image bloodMaskImage;
+        [Header("Canvas References")]
         [SerializeField] Canvas pauseCanvas;
+        [SerializeField] Canvas levelCompleteCanvas;
+        [SerializeField] Canvas levelFailCanvas;
 
         [Header("Settings")]
         [SerializeField, Range(0, 0.1f)] float bloodMaskFadeSpeed = 0.05f;
@@ -28,11 +42,11 @@ namespace Architecture.Managers
 
         private void Start()
         {
-            PauseController.GetReference().PauseEvent.AddListener(ShowPauseMenu);
-            PauseController.GetReference().UnPauseEvent.AddListener(HidePauseMenu);
+            PauseController.GetReference().PauseEvent.AddListener(() => { SetState(State.Paused); });
+            PauseController.GetReference().UnPauseEvent.AddListener(() => { SetState(State.Playing); });
             LevelController.GetReference().GameOverEvent.AddListener(GameOver);
 
-            pauseCanvas.enabled = false;
+            SetState(State.Playing);
 
             StartCoroutine(FadeBloodMask());
         }
@@ -43,27 +57,73 @@ namespace Architecture.Managers
             switch (reason)
             {
                 case LevelController.GameOverReason.Success_100Percent:
+                    GameOverMessage = "You harvested 100% of the wheat, well done!";
+                    SetState(State.LevelComplete);
+                    break;
                 case LevelController.GameOverReason.Success_RequiredWheat:
-                    GameController.Instance.CompleteLevel();
+                    GameOverMessage = "You harvested enough wheat in time.";
+                    SetState(State.LevelComplete);
                     break;
                 case LevelController.GameOverReason.Fail_Time:
-                    GameController.Instance.FailLevel();
+                    GameOverMessage = "You didn't harvest enough wheat in time!";
+                    SetState(State.LevelFail);
                     break;
                 case LevelController.GameOverReason.Fail_HarvesterExploded:
-                    GameController.Instance.FailLevel();
+                    GameOverMessage = "You hit a rock and blew up.";
+                    SetState(State.LevelFail);
                     break;
             }
         }
 
-        private void ShowPauseMenu()
+        private void SetState(State state)
         {
-            pauseCanvas.enabled = true;
+            UIState = state;
+            switch (state)
+            {
+                case State.Playing:
+                    pauseCanvas.enabled = false;
+                    levelFailCanvas.enabled = false;
+                    levelCompleteCanvas.enabled = false;
+                    break;
+                case State.Paused:
+                    pauseCanvas.enabled = true;
+                    levelFailCanvas.enabled = false;
+                    levelCompleteCanvas.enabled = false;
+                    break;
+                case State.LevelFail:
+                    pauseCanvas.enabled = false;
+                    levelFailCanvas.enabled = true;
+                    levelCompleteCanvas.enabled = false;
+                    break;
+                case State.LevelComplete:
+                    pauseCanvas.enabled = false;
+                    levelFailCanvas.enabled = false;
+                    levelCompleteCanvas.enabled = true;
+                    break;
+            }
         }
 
-        private void HidePauseMenu()
+        public void Pause()
         {
-            print("HIDING PAUSE MENU");
-            pauseCanvas.enabled = false;
+            PauseController.GetReference().PauseTheGame();
+        }
+
+        public void UnPause()
+        {
+            PauseController.GetReference().UnPauseTheGame();
+        }
+
+        public void Restart()
+        {
+            UnPause();
+            Debug.Log("Rest");
+            GameController.Instance.Restart();
+        }
+
+        public void Leave()
+        {
+            UnPause();
+            GameController.Instance.LeaveLevel();
         }
 
         #region HUD_UPDATING

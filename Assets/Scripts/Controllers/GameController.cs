@@ -25,6 +25,7 @@ namespace Architecture.Managers
         private void LoadCurrentLevel()
         {
             SceneLoadingOperation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + Level + gameLevel1Offset);
+            SceneLoadingOperation.allowSceneActivation = true;
         }
 
         #region GAME_LEVEL_INTERFACE
@@ -47,9 +48,16 @@ namespace Architecture.Managers
             }
         }
 
-        public void FailLevel()
+        public void LeaveLevel()
         {
             SceneLoadingOperation = SceneManager.LoadSceneAsync(mainMenuSceneName);
+            SceneLoadingOperation.allowSceneActivation = true;
+        }
+
+        public void Restart()
+        {
+            Debug.Log("Rest2");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + Level + gameLevel1Offset);
         }
         #endregion
 

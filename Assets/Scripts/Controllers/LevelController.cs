@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 namespace Architecture.Managers
 {
@@ -82,6 +83,11 @@ namespace Architecture.Managers
         void TimeRanOut()
         {
             GameOverEvent.Invoke(GameOverReason.Fail_Time);
+        }
+
+        public void RestartLevel()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
