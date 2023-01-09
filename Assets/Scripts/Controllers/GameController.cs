@@ -56,7 +56,6 @@ namespace Architecture.Managers
 
         public void Restart()
         {
-            Debug.Log("Rest2");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + Level + gameLevel1Offset);
         }
         #endregion
