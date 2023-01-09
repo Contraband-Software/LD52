@@ -50,6 +50,11 @@ namespace Architecture.Managers
             });
         }
 
+        public bool IsGameOver()
+        {
+            return gameOver;
+        }
+
         private void Start()
         {
             timeLeft = timeLimitSeconds;

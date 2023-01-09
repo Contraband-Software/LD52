@@ -24,7 +24,7 @@ namespace Architecture.Managers {
 
         public void PauseTheGame()
         {
-            if (!GamePaused)
+            if (!GamePaused && !LevelController.GetReference().IsGameOver())
             {
                 GamePaused = true;
 
