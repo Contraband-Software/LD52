@@ -33,7 +33,6 @@ namespace Architecture.Harvester
         [SerializeField] BoxCollider2D bladesCollider;
 
         [Header("Wheat Collision")]
-        [SerializeField] WheatFieldManager wheatCollisionScript;
         [SerializeField] LayerMask collideOnlyWithHarvesterBlade;
 
         [Header("Particle Effects")]
@@ -50,6 +49,7 @@ namespace Architecture.Harvester
 
         private Rigidbody2D rb;
         private Animator bladeAnimation;
+        private WheatFieldManager wheatCollisionScript;
 
         private float horizontal;
         private float vertical;
@@ -63,6 +63,7 @@ namespace Architecture.Harvester
         {
             rb = GetComponent<Rigidbody2D>();
             bladeAnimation = GetComponent<Animator>();
+            wheatCollisionScript = WheatFieldManager.GetReference();
 
             SoundSystem.Instance.PlaySound("Harvester_Motor");
         }
