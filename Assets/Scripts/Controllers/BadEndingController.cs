@@ -8,7 +8,7 @@ namespace Architecture.Managers
     {
         public void BackToMainMenu()
         {
-            
+            GameController.Instance.LeaveLevel();
         }
     }
 }
