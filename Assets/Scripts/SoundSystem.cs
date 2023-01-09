@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-#pragma warning disable UNT0014
+//#pragma warning disable UNT0014
 
 namespace Architecture.Managers
 {
     [
-        RequireComponent(typeof(AudioSource)),
+        RequireComponent(typeof(AudioListener)),
         DisallowMultipleComponent
     ]
     public class SoundSystem : Backend.AbstractSingleton<SoundSystem>
@@ -18,9 +18,9 @@ namespace Architecture.Managers
         [SerializeField] Transform music;
 
         readonly Dictionary<string, AudioSource> sfxDictionary = new();
-        readonly Dictionary<string, AudioClip> musicDictionary = new();
+        readonly Dictionary<string, AudioSource> musicDictionary = new();
 
-        AudioSource mainMusicSource;
+        AudioSource currentMusicSource;
 
         protected override void SingletonAwake()
         {
@@ -30,10 +30,8 @@ namespace Architecture.Managers
             }
             foreach (Transform child in music)
             {
-                musicDictionary.Add(child.name, child.GetComponent<AudioClip>());
+                musicDictionary.Add(child.name, child.GetComponent<AudioSource>());
             }
-
-            mainMusicSource = GetComponent<AudioSource>();
         }
 
         /// <summary>
@@ -75,9 +73,8 @@ namespace Architecture.Managers
                 throw new ArgumentException("Unknown/invalid song name, ensure the GameObject containing it has the same name you have supplied to this function.");
             }
 #endif
-            mainMusicSource.Stop();
-            mainMusicSource.clip = musicDictionary[song];
-            mainMusicSource.Play();
+            musicDictionary[song].Play();
+            currentMusicSource = musicDictionary[song];
         }
 
         /// <summary>
@@ -85,7 +82,7 @@ namespace Architecture.Managers
         /// </summary>
         public void StopMusic()
         {
-            mainMusicSource.Stop();
+            currentMusicSource?.Stop();
         }
     }
 }
