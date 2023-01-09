@@ -10,8 +10,11 @@ namespace Architecture.Managers
     {
         public enum GameOverReason
         {
-            Time,
-            HarvesterExploded,
+            Success_100Percent,
+            Success_RequiredWheat,
+
+            Fail_Time,
+            Fail_HarvesterExploded,
         }
 
         #region EVENTS
@@ -28,6 +31,11 @@ namespace Architecture.Managers
         [SerializeField, Min(0)] int timeLimitSeconds = 120;
         [SerializeField, Min(40)] int percentageGoal = 40;
 
+#if UNITY_EDITOR
+        [Header("Debug")]
+        [SerializeField] bool noFail = false;
+#endif
+
         float timeLeft;
 
         private void Awake()
@@ -35,7 +43,7 @@ namespace Architecture.Managers
             SoundSystem.Instance.PlayMusic("Game");
             Harvester.HarvesterController.GetReference().HarvesterDestroyed.AddListener(() =>
             {
-                GameOverEvent.Invoke(GameOverReason.HarvesterExploded);
+                GameOverEvent.Invoke(GameOverReason.Fail_HarvesterExploded);
             });
         }
 
@@ -55,11 +63,25 @@ namespace Architecture.Managers
             }
             UIControllerLevel.GetReference().UpdateTimeLeft(timeLeft / timeLimitSeconds);
             UIControllerLevel.GetReference().UpdatePercentageHarvested(Wheat.WheatFieldManager.GetReference().GetPercentageHarvested());
+
+            if (timeLeft <= 0f)
+            {
+                Harvester.HarvesterController.GetReference().LockControls(true);
+
+                if (Mathf.RoundToInt(Wheat.WheatFieldManager.GetReference().GetPercentageHarvested()) == 100)
+                {
+                    GameOverEvent.Invoke(GameOverReason.Success_100Percent);
+                }
+                else if (Wheat.WheatFieldManager.GetReference().GetPercentageHarvested() >= percentageGoal)
+                {
+                    GameOverEvent.Invoke(GameOverReason.Success_RequiredWheat);
+                }
+            }
         }
 
         void TimeRanOut()
         {
-            GameOverEvent.Invoke(GameOverReason.Time);
+            GameOverEvent.Invoke(GameOverReason.Fail_Time);
         }
     }
 }

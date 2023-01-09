@@ -30,10 +30,29 @@ namespace Architecture.Managers
         {
             PauseController.GetReference().PauseEvent.AddListener(ShowPauseMenu);
             PauseController.GetReference().UnPauseEvent.AddListener(HidePauseMenu);
+            LevelController.GetReference().GameOverEvent.AddListener(GameOver);
 
             pauseCanvas.enabled = false;
 
-            StartCoroutine(FadeMask());
+            StartCoroutine(FadeBloodMask());
+        }
+
+        private void GameOver(LevelController.GameOverReason reason)
+        {
+            StopAllCoroutines();
+            switch (reason)
+            {
+                case LevelController.GameOverReason.Success_100Percent:
+                case LevelController.GameOverReason.Success_RequiredWheat:
+                    GameController.Instance.CompleteLevel();
+                    break;
+                case LevelController.GameOverReason.Fail_Time:
+                    GameController.Instance.FailLevel();
+                    break;
+                case LevelController.GameOverReason.Fail_HarvesterExploded:
+                    GameController.Instance.FailLevel();
+                    break;
+            }
         }
 
         private void ShowPauseMenu()
@@ -69,7 +88,7 @@ namespace Architecture.Managers
         /// <summary>
         /// Removes the blood mask
         /// </summary>
-        public void ResetMask()
+        public void ResetBloodMask()
         {
             currentMaskOpacity = 0;
         }
@@ -82,7 +101,7 @@ namespace Architecture.Managers
             currentMaskOpacity = 0.9994f;
         }
 
-        IEnumerator FadeMask()
+        IEnumerator FadeBloodMask()
         {
             while (enabled)
             {

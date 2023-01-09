@@ -19,7 +19,12 @@ namespace Architecture.Managers
 
         protected override void SingletonAwake()
         {
-            //Unused
+            //Unused but required by Backend.AbstractSingleton<T>
+        }
+
+        private void LoadCurrentLevel()
+        {
+            SceneLoadingOperation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + Level + gameLevel1Offset);
         }
 
         #region GAME_LEVEL_INTERFACE
@@ -33,12 +38,18 @@ namespace Architecture.Managers
             }
 #endif
 
-            Level++;
-
-            if (Level == SceneManager.sceneCountInBuildSettings)
+            if (Level++ == SceneManager.sceneCountInBuildSettings)
             {
                 SceneLoadingOperation = SceneManager.LoadSceneAsync(endOfLevelsSceneName);
+            } else
+            {
+                LoadCurrentLevel();
             }
+        }
+
+        public void FailLevel()
+        {
+            SceneLoadingOperation = SceneManager.LoadSceneAsync(mainMenuSceneName);
         }
         #endregion
 
@@ -51,7 +62,7 @@ namespace Architecture.Managers
                 throw new System.InvalidOperationException("GameController: You can only use this function in the main menu");
             }
 #endif
-            SceneLoadingOperation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + Level + gameLevel1Offset);
+            LoadCurrentLevel();
         }
 
         public void StartNewGame()
