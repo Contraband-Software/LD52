@@ -116,7 +116,6 @@ namespace Architecture.Managers
         public void Restart()
         {
             UnPause();
-            Debug.Log("Rest");
             GameController.Instance.Restart();
         }
 
@@ -124,6 +123,11 @@ namespace Architecture.Managers
         {
             UnPause();
             GameController.Instance.LeaveLevel();
+        }
+
+        public void Continue()
+        {
+            GameController.Instance.ContinueGame();
         }
 
         #region HUD_UPDATING
