@@ -11,7 +11,7 @@ namespace Architecture
     ]
     public class GameOverMessage : MonoBehaviour
     {
-        private void OnEnable()
+        private void Update()
         {
             GetComponent<TextMeshProUGUI>().text = Managers.UIControllerLevel.GetReference().GameOverMessage;
         }

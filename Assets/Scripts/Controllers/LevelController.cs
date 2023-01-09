@@ -18,6 +18,8 @@ namespace Architecture.Managers
             Fail_HarvesterExploded,
         }
 
+        bool gameOver = false;
+
         #region EVENTS
         public sealed class GameOverEventType : UnityEvent<GameOverReason> { }
         public GameOverEventType GameOverEvent { get; private set; } = new GameOverEventType();
@@ -55,34 +57,40 @@ namespace Architecture.Managers
 
         void Update()
         {
-            UIControllerLevel.GetReference().UpdateTimeLeft(timeLeft / timeLimitSeconds);
-            UIControllerLevel.GetReference().UpdatePercentageHarvested(Wheat.WheatFieldManager.GetReference().GetPercentageHarvested());
+            if (!gameOver)
+            {
+                UIControllerLevel.GetReference().UpdateTimeLeft(timeLeft / timeLimitSeconds);
+                UIControllerLevel.GetReference().UpdatePercentageHarvested(Wheat.WheatFieldManager.GetReference().GetPercentageHarvested());
 
 #if UNITY_EDITOR
-            if (noFail)
-            {
-                return;
-            }
+                if (noFail)
+                {
+                    return;
+                }
 #endif
-            if (timeLeft <= 0f)
-            {
-                timeLeft = 0f;
-                Harvester.HarvesterController.GetReference().LockControls(true);
+                if (timeLeft <= 0f)
+                {
+                    timeLeft = 0f;
+                    gameOver = true;
+                    Harvester.HarvesterController.GetReference().LockControls(true);
 
-                if (Mathf.RoundToInt(Wheat.WheatFieldManager.GetReference().GetPercentageHarvested()) == 100)
-                {
-                    GameOverEvent.Invoke(GameOverReason.Success_100Percent);
+                    if (Mathf.RoundToInt(Wheat.WheatFieldManager.GetReference().GetPercentageHarvested()) == 100)
+                    {
+                        GameOverEvent.Invoke(GameOverReason.Success_100Percent);
+                    }
+                    else if (Wheat.WheatFieldManager.GetReference().GetPercentageHarvested() >= percentageGoal)
+                    {
+                        GameOverEvent.Invoke(GameOverReason.Success_RequiredWheat);
+                    }
+                    else
+                    {
+                        GameOverEvent.Invoke(GameOverReason.Fail_Time);
+                    }
                 }
-                else if (Wheat.WheatFieldManager.GetReference().GetPercentageHarvested() >= percentageGoal)
+                else
                 {
-                    GameOverEvent.Invoke(GameOverReason.Success_RequiredWheat);
-                } else
-                {
-                    GameOverEvent.Invoke(GameOverReason.Fail_Time);
+                    timeLeft -= Time.deltaTime;
                 }
-            } else
-            {
-                timeLeft -= Time.deltaTime;
             }
         }
 

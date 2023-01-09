@@ -213,5 +213,10 @@ namespace Architecture.Harvester
             Penalty = false;
         }
         #endregion
+
+        private void OnDestroy()
+        {
+            Debug.Log("gone");
+        }
     }
 }

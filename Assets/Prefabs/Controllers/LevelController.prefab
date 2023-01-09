@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeLimitSeconds: 30
   percentageGoal: 45
+  noFail: 0
 --- !u!114 &1679943910321593413
 MonoBehaviour:
   m_ObjectHideFlags: 0
