@@ -59,6 +59,12 @@ namespace Architecture.Managers
             UIControllerLevel.GetReference().UpdateTimeLeft(timeLeft / timeLimitSeconds);
             UIControllerLevel.GetReference().UpdatePercentageHarvested(Wheat.WheatFieldManager.GetReference().GetPercentageHarvested());
 
+#if UNITY_EDITOR
+            if (noFail)
+            {
+                return;
+            }
+#endif
             if (timeLeft <= 0f)
             {
                 timeLeft = 0f;
