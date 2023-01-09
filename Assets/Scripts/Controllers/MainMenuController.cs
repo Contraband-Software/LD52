@@ -34,6 +34,7 @@ namespace Architecture.Managers
             if(GameController.Instance.Level == 0)
             {
                 continueButton.SetActive(false);
+                levelText.gameObject.SetActive(false);
             }
             else
             {

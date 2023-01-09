@@ -34,6 +34,9 @@ namespace Architecture.Managers
         [SerializeField] Canvas pauseCanvas;
         [SerializeField] Canvas levelCompleteCanvas;
         [SerializeField] Canvas levelFailCanvas;
+        [Header("Black FIlter References")]
+        [SerializeField] CanvasGroup blackOverlay;
+        [SerializeField] Animator blackOverlayAnim;
 
         [Header("Settings")]
         [SerializeField, Range(0, 0.1f)] float bloodMaskFadeSpeed = 0.05f;
@@ -117,17 +120,39 @@ namespace Architecture.Managers
         {
             UnPause();
             GameController.Instance.Restart();
+
+            //BlackFilterFade
+            FadeInBlackOverlay();
         }
 
         public void Leave()
         {
             UnPause();
             GameController.Instance.LeaveLevel();
+
+            //BlackFIlter
+            FadeInBlackOverlay();
         }
 
         public void Continue()
         {
             GameController.Instance.ContinueGame();
+
+            //BlackFilter
+            FadeInBlackOverlay();
+        }
+
+        private void FadeInBlackOverlay()
+        {
+            GameController.Instance.SceneLoadingOperation.allowSceneActivation = false;
+
+            blackOverlay.blocksRaycasts = true;
+            blackOverlayAnim.Play("FadeInBlack");
+        }
+
+        public void FadeInBlackCompleted()
+        {
+            GameController.Instance.SceneLoadingOperation.allowSceneActivation = true;
         }
 
         #region HUD_UPDATING
