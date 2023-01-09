@@ -1,12 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Architecture.Managers
 {
     [DisallowMultipleComponent]
     public class LevelController : MonoBehaviour
     {
+        public enum GameOverReason
+        {
+            Time,
+            HarvesterExploded,
+        }
+
+        #region EVENTS
+        public sealed class GameOverEventType : UnityEvent<GameOverReason> { }
+        public GameOverEventType GameOverEvent { get; private set; } = new GameOverEventType();
+        #endregion
+
         public static LevelController GetReference()
         {
             return GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelController>();
@@ -21,6 +33,10 @@ namespace Architecture.Managers
         private void Awake()
         {
             SoundSystem.Instance.PlayMusic("Game");
+            Harvester.HarvesterController.GetReference().HarvesterDestroyed.AddListener(() =>
+            {
+                GameOverEvent.Invoke(GameOverReason.HarvesterExploded);
+            });
         }
 
         private void Start()
@@ -43,7 +59,7 @@ namespace Architecture.Managers
 
         void TimeRanOut()
         {
-
+            GameOverEvent.Invoke(GameOverReason.Time);
         }
     }
 }
