@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Architecture.Managers;
 using UnityEngine.UI;
+using TMPro;
 
 namespace Architecture.Managers
 {
@@ -18,6 +19,7 @@ namespace Architecture.Managers
         [SerializeField] CanvasGroup blackOverlay;
         [SerializeField] Animator blackOverlayAnim;
         [SerializeField] Image backgroundImage;
+        [SerializeField] TextMeshProUGUI levelText;
 
         [Header("Other referecnes")]
         [SerializeField] Sprite foggyBackground;
@@ -36,6 +38,7 @@ namespace Architecture.Managers
             else
             {
                 backgroundImage.sprite = foggyBackground;
+                levelText.text = "Level:" + GameController.Instance.Level.ToString();
             }
 
             blackOverlay.blocksRaycasts = false;
