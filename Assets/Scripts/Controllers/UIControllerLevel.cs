@@ -104,6 +104,8 @@ namespace Architecture.Managers
                     levelCompleteCanvas.enabled = true;
                     break;
             }
+
+            print(state.ToString());
         }
 
         public void Pause()

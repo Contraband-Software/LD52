@@ -153,7 +153,7 @@ namespace Architecture.Wheat
             harvestedWheatTilemap.SetTile(tilePos, harvestedWheatTile);
             wheatHarvested++;
 
-            Debug.Log(wheatHarvested.ToString() + " / " + amountOfWheat.ToString());
+            //Debug.Log(wheatHarvested.ToString() + " / " + amountOfWheat.ToString());
 
             Managers.SoundSystem.Instance.PlaySound("Wheat_Harvest", true);
         }
