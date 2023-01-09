@@ -138,7 +138,7 @@ namespace Architecture.Managers
 
         public void Continue()
         {
-            GameController.Instance.ContinueGame();
+            GameController.Instance.CompleteLevel();
 
             //BlackFilter
             FadeInBlackOverlay();

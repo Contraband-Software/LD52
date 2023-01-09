@@ -1,10 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
-using UnityEngine.SocialPlatforms;
-using static UnityEngine.RuleTile.TilingRuleOutput;
-using UnityEngine.SceneManagement;
 
 namespace Architecture.Wheat
 {
