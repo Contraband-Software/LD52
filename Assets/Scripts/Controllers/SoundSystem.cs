@@ -84,5 +84,16 @@ namespace Architecture.Managers
         {
             currentMusicSource?.Stop();
         }
+
+        /// <summary>
+        /// Stops all SFX
+        /// </summary>
+        public void StopAllSounds()
+        {
+            foreach (KeyValuePair<string, AudioSource> sfx in sfxDictionary)
+            {
+                sfx.Value.Stop();
+            }
+        }
     }
 }

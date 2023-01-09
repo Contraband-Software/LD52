@@ -41,8 +41,6 @@ namespace Architecture.Wheat
         {
             grid = GetComponent<Grid>();
 
-            BoundsInt bounds = groundTilemap.cellBounds;
-
 #if UNITY_EDITOR
 #pragma warning disable S112
             if (wheatTile == null)
@@ -52,8 +50,11 @@ namespace Architecture.Wheat
 #pragma warning restore S112
 #endif
 
-            GenerateWheatField();
+            //GenerateWheatField();
 
+            BoundsInt bounds = wheatTilemap.cellBounds;
+            Debug.Log("Wheat tile map: " + bounds.ToString());
+            wheatTilemap.SetTile(new Vector3Int(-83, -7), wheatTile);
             for (int y = bounds.y; y < bounds.y + bounds.size.y; y++)
             {
                 for (int x = bounds.x; x < bounds.x + bounds.size.x; x++)
