@@ -12,36 +12,27 @@ namespace Architecture
     public class RockSpawner : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField] Tilemap groundTilemap;
         [SerializeField] Tilemap rockTilemap;
         [SerializeField] Tilemap wheatTileMap;
         [SerializeField] Tile[] rockTiles;
         [SerializeField] GameObject rockGameObject;
+        [SerializeField] RectTransform rockSpawnArea;
 
         [Header("Settings")]
-        [SerializeField, Range(0, 1)] float spawnChancePerTileRow = 0.96f;
+        [SerializeField, Range(0, 0.01f)] float spawnChancePerTileRow = 0.001f;
 
         void Awake()
         {
-            //BoundsInt bounds = groundTilemap.cellBounds;
-            //Debug.Log(groundTilemap.origin);
+            Vector4 bounds = new Vector4(
+                Mathf.FloorToInt(rockSpawnArea.localPosition.x),
+                Mathf.FloorToInt(rockSpawnArea.localPosition.y),
+                Mathf.FloorToInt(rockSpawnArea.localPosition.x + rockSpawnArea.sizeDelta.x),
+                Mathf.FloorToInt(rockSpawnArea.localPosition.y + rockSpawnArea.sizeDelta.y)
+            );
 
-            //for (int y = bounds.y; y < bounds.y + bounds.size.y; y++)
-            //{
-            //    for (int x = bounds.x; x < bounds.x + bounds.size.x; x++)
-            //    {
-            //        if (Random.value > 1 - spawnChancePerTileRow)
-            //        {
-            //            PlaceRock(rockTilemap, new Vector3Int(x, y));
-            //            x++;
-            //            y++;
-            //        }
-            //    }
-            //}
-
-            for (int y = groundTilemap.origin.y; y < groundTilemap.size.y; y++)
+            for (int y = (int)bounds.y; y < (int)bounds.w; y++)
             {
-                for (int x = groundTilemap.origin.x; x < groundTilemap.size.x; x++)
+                for (int x = (int)bounds.x; x < (int)bounds.z; x++)
                 {
                     if (Random.value > 1 - spawnChancePerTileRow)
                     {

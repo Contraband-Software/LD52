@@ -18,11 +18,12 @@ namespace Architecture.Wheat
         }
 
         [Header("References")]
-        [SerializeField] Tilemap groundTilemap;
+        //[SerializeField] Tilemap groundTilemap;
         [SerializeField] Tilemap wheatTilemap;
         [SerializeField] Tilemap harvestedWheatTilemap;
         [SerializeField] Tile harvestedWheatTile;
         [SerializeField] RuleTile wheatTile;
+        [SerializeField] RectTransform wheatSpawnArea;
 
         [Header("Generation Settings")]
         [Tooltip("Keep below 1.")]
@@ -50,7 +51,7 @@ namespace Architecture.Wheat
 #pragma warning restore S112
 #endif
 
-            //GenerateWheatField();
+            GenerateWheatField();
 
             BoundsInt bounds = wheatTilemap.cellBounds;
             Debug.Log("Wheat tile map: " + bounds.ToString());
@@ -85,9 +86,16 @@ namespace Architecture.Wheat
         //}
         private void GenerateWheatField()
         {
-            for (int y = groundTilemap.cellBounds.y; y < groundTilemap.cellBounds.y + groundTilemap.size.y; y++)
+            Vector4 bounds = new Vector4(
+                Mathf.FloorToInt(wheatSpawnArea.localPosition.x),
+                Mathf.FloorToInt(wheatSpawnArea.localPosition.y),
+                Mathf.FloorToInt(wheatSpawnArea.localPosition.x + wheatSpawnArea.sizeDelta.x),
+                Mathf.FloorToInt(wheatSpawnArea.localPosition.y + wheatSpawnArea.sizeDelta.y)
+            );
+
+            for (int y = (int)bounds.y; y < (int)bounds.w; y++)
             {
-                for (int x = groundTilemap.cellBounds.x; x < groundTilemap.cellBounds.x + groundTilemap.size.x; x++)
+                for (int x = (int)bounds.x; x < (int)bounds.z; x++)
                 {
                     if (Mathf.PerlinNoise(x / perlinScale, y / perlinScale) + Random.Range(0.0f, 0.3f) > perlinThreshold)
                     {
