@@ -28,7 +28,6 @@ namespace Architecture.Managers
 
         private void Start()
         {
-            print("START");
             PauseController.GetReference().PauseEvent.AddListener(ShowPauseMenu);
             PauseController.GetReference().UnPauseEvent.AddListener(HidePauseMenu);
 
