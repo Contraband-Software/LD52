@@ -48,6 +48,10 @@ namespace Architecture.Managers
                 HaltGame();
                 GameOverEvent.Invoke(GameOverReason.Fail_HarvesterExploded);
             });
+            GameOverEvent.AddListener((GameOverReason reason) =>
+            {
+                HaltGame();
+            });
         }
 
         public bool IsGameOver()

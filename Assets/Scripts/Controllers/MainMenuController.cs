@@ -37,7 +37,7 @@ namespace Architecture.Managers
         {
             //disables the continue button if no level to
             //continue from
-            if(GameController.Instance.Level == 0)
+            if(!GameController.Instance.HasProgressed())
             {
                 continueButton.SetActive(false);
                 levelText.gameObject.SetActive(false);
@@ -45,7 +45,7 @@ namespace Architecture.Managers
             else
             {
                 backgroundImage.sprite = foggyBackground;
-                levelText.text = "Level:" + (GameController.Instance.Level +1).ToString();
+                levelText.text = "Level:" + (GameController.Instance.Level + 1).ToString();
             }
 
             blackOverlay.blocksRaycasts = false;

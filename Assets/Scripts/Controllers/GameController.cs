@@ -22,13 +22,24 @@ namespace Architecture.Managers
             //Unused but required by Backend.AbstractSingleton<T>
         }
 
-        private void LoadCurrentLevel()
+        private void GotoCurrentLevel()
         {
             SceneLoadingOperation = SceneManager.LoadSceneAsync(Level + gameLevel1Offset);
             SceneLoadingOperation.allowSceneActivation = true;
         }
 
+        #region COMMON_INTERFACE
+        public void ResetProgress()
+        {
+            Level = 0;
+        }
+        #endregion
+
         #region GAME_LEVEL_INTERFACE
+        /// <summary>
+        /// Increments the user's level progress, does not change scene.
+        /// </summary>
+        /// <exception cref="System.InvalidOperationException">Can only be used within a level scene</exception>
         public void CompleteLevel()
         {
 #if UNITY_EDITOR
@@ -41,27 +52,36 @@ namespace Architecture.Managers
             Level++;
         }
 
-        public void GotoCurrent()
+        /// <summary>
+        /// Goes to the current level the user has progressed to
+        /// </summary>
+        public void LoadCurrentLevel()
         {
-            if (Level == SceneManager.sceneCountInBuildSettings)
+            if (Level + gameLevel1Offset >= SceneManager.sceneCountInBuildSettings)
             {
                 SceneLoadingOperation = SceneManager.LoadSceneAsync(endOfLevelsSceneName);
             }
             else
             {
-                LoadCurrentLevel();
+                GotoCurrentLevel();
             }
         }
+
+        /// <summary>
+        /// Goes back to the main menu
+        /// </summary>
         public void LeaveLevel()
         {
             SceneLoadingOperation = SceneManager.LoadSceneAsync(mainMenuSceneName);
             SceneLoadingOperation.allowSceneActivation = true;
         }
 
+        /// <summary>
+        /// Reloads the current level
+        /// </summary>
         public void Restart()
         {
-            SceneLoadingOperation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
-            SceneLoadingOperation.allowSceneActivation = true;
+            GotoCurrentLevel();
         }
         #endregion
 
@@ -74,7 +94,7 @@ namespace Architecture.Managers
                 throw new System.InvalidOperationException("GameController: You can only use this function in the main menu");
             }
 #endif
-            LoadCurrentLevel();
+            GotoCurrentLevel();
         }
 
         public void StartNewGame()

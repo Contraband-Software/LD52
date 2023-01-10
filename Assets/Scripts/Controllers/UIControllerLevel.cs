@@ -140,7 +140,7 @@ namespace Architecture.Managers
 
         public void Continue()
         {
-            GameController.Instance.GotoCurrent();
+            GameController.Instance.LoadCurrentLevel();
 
             //BlackFilter
             FadeInBlackOverlay();
