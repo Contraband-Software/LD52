@@ -351,7 +351,7 @@ MonoBehaviour:
   - {x: -6.5781136, y: 8.403488, z: 0}
   m_ShapePathHash: -1118046451
   m_Mesh: {fileID: 0}
-  m_InstanceId: 46000
+  m_InstanceId: -365954
 --- !u!1 &1436952086
 GameObject:
   m_ObjectHideFlags: 0
@@ -15079,7 +15079,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 2.395379}
+  m_Offset: {x: 0, y: 2.541916}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -15090,7 +15090,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.75, y: 0.8983822}
+  m_Size: {x: 8.75, y: 0.86906433}
   m_EdgeRadius: 0
 --- !u!1 &7873533908172215099
 GameObject:
@@ -15182,7 +15182,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fb57823b742cf814cbd21a0c539a7373, type: 2}
+  - {fileID: 2100000, guid: 6d8636df0fd994d4eb99890cebaadfdf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
