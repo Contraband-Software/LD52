@@ -123,17 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &194373126 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4554809320267970908, guid: 85f0273fa1c0f324081175b46d5adfa2, type: 3}
-  m_PrefabInstance: {fileID: 1235662130}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &326689193 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 257517336259343599, guid: c892409fe84a0b843a522d9f743a7a83, type: 3}
-  m_PrefabInstance: {fileID: 1024977483}
-  m_PrefabAsset: {fileID: 0}
---- !u!43 &693917815
+--- !u!43 &9419090
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -297,6 +287,16 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!4 &194373126 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4554809320267970908, guid: 85f0273fa1c0f324081175b46d5adfa2, type: 3}
+  m_PrefabInstance: {fileID: 1235662130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &326689193 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 257517336259343599, guid: c892409fe84a0b843a522d9f743a7a83, type: 3}
+  m_PrefabInstance: {fileID: 1024977483}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &802907102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -304,6 +304,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 266212013, guid: 6490d75fec24bde4db1e6aafc8599889, type: 3}
+      propertyPath: spawnChancePerTileRow
+      value: 0.001
+      objectReference: {fileID: 0}
     - target: {fileID: 4768176161849923041, guid: 6490d75fec24bde4db1e6aafc8599889, type: 3}
       propertyPath: m_Name
       value: Map
