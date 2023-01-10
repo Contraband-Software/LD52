@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -14,15 +15,29 @@ namespace Architecture
         [Header("References")]
         [SerializeField] Tilemap rockTilemap;
         [SerializeField] Tilemap wheatTileMap;
-        [SerializeField] Tile[] rockTiles;
+        [SerializeField] Tile[] rockTiles = new Tile[4];
         [SerializeField] GameObject rockGameObject;
         [SerializeField] RectTransform rockSpawnArea;
 
         [Header("Settings")]
-        [SerializeField, Range(0, 0.01f)] float spawnChancePerTileRow = 0.001f;
+        [SerializeField, Range(0, 0.009f)] float spawnChancePerTileRow = 0.001f;
 
         void Awake()
         {
+#if UNITY_EDITOR
+            if (rockTiles == null ||
+                rockTiles[0] == null ||
+                rockTiles[1] == null ||
+                rockTiles[2] == null ||
+                rockTiles[3] == null
+            )
+            {
+#pragma warning disable S112
+                throw new System.NullReferenceException("RockSpawner: All four rock tile references must be set.");
+#pragma warning restore S112
+            }
+#endif
+
             Vector4 bounds = new Vector4(
                 Mathf.FloorToInt(rockSpawnArea.localPosition.x),
                 Mathf.FloorToInt(rockSpawnArea.localPosition.y),
@@ -36,7 +51,7 @@ namespace Architecture
                 {
                     if (Random.value > 1 - spawnChancePerTileRow)
                     {
-                        PlaceRock(rockTilemap, new Vector3Int(x, y));
+                        PlaceRock(new Vector3Int(x, y));
                         x++;
                         y++;
                     }
@@ -44,16 +59,16 @@ namespace Architecture
             }
         }
 
-        private void PlaceRock(Tilemap tilemap, Vector3Int position)
+        private void PlaceRock(Vector3Int position)
         {
-            for (int i = 0; i < rockTiles.Length; i++) {
+            for (int i = 0; i < 4; i++) {
                 Vector3Int pos = position + new Vector3Int(i % 2, -1 * Mathf.FloorToInt(i / 2.0f));
-                tilemap.SetTile(pos, rockTiles[i]);
+                rockTilemap.SetTile(pos, rockTiles[i]);
                 wheatTileMap.SetTile(pos, null);
             }
 
             GameObject gObject = Instantiate(rockGameObject, rockTilemap.transform);
-            gObject.transform.localPosition = Backend.Utilities.Mult_CWise((Vector3)position - new Vector3(0, 1, 0), tilemap.cellSize);
+            gObject.transform.localPosition = Backend.Utilities.Mult_CWise((Vector3)position - new Vector3(0, 1, 0), rockTilemap.cellSize);
         }
     }
 }

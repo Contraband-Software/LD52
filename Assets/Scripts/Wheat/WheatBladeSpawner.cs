@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace Architecture.Wheat
 {
-    [
-        RequireComponent(typeof(BoxCollider2D))
-    ]
+    //[
+    //    RequireComponent(typeof(BoxCollider2D))
+    //]
     public sealed class WheatBladeSpawner : MonoBehaviour
     {
         [Header("References")]
