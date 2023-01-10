@@ -351,7 +351,7 @@ MonoBehaviour:
   - {x: -6.5781136, y: 8.403488, z: 0}
   m_ShapePathHash: -1118046451
   m_Mesh: {fileID: 0}
-  m_InstanceId: -365954
+  m_InstanceId: 76390
 --- !u!1 &1436952086
 GameObject:
   m_ObjectHideFlags: 0
@@ -10262,7 +10262,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5620831664009524543}
   serializedVersion: 8
-  lengthInSec: 0.5
+  lengthInSec: 1.2
   simulationSpeed: 1
   stopAction: 3
   cullingMode: 0
@@ -10883,7 +10883,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 4.27
+    angle: 6.1
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 0
@@ -11088,7 +11088,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 2
-      scalar: 330
+      scalar: 400
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -11104,12 +11104,12 @@ ParticleSystem:
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 0.29729766
-          inSlope: 0
-          outSlope: 0
+          value: 0.06741637
+          inSlope: 0.022602443
+          outSlope: 0.022602443
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
+          inWeight: 0.27048272
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -11128,7 +11128,7 @@ ParticleSystem:
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 0.21621704
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
