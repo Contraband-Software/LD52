@@ -11,6 +11,8 @@ namespace Architecture.Wheat
     {
         [Header("References")]
         [SerializeField] GameObject wheatBladePrefab;
+        [SerializeField] RectTransform wheatBladeSpawnArea;
+        [SerializeField] Transform parent;
 
         [Header("Settings")]
         [SerializeField, Min(0)] uint amount = 250;
@@ -31,11 +33,17 @@ namespace Architecture.Wheat
             WheatBlade.RightAngleLimit = rightAngleLimit;
             WheatBlade.WheatDirectionForce = wheatDirectionForce;
 
-            BoxCollider2D bc = GetComponent<BoxCollider2D>();
+            Vector4 bounds = new Vector4(
+                Mathf.FloorToInt(wheatBladeSpawnArea.localPosition.x),
+                Mathf.FloorToInt(wheatBladeSpawnArea.localPosition.y),
+                Mathf.FloorToInt(wheatBladeSpawnArea.localPosition.x + wheatBladeSpawnArea.sizeDelta.x),
+                Mathf.FloorToInt(wheatBladeSpawnArea.localPosition.y + wheatBladeSpawnArea.sizeDelta.y)
+            );
+
             for (int i = 0; i < amount; i++)
             {
-                GameObject blade = Instantiate(wheatBladePrefab, transform);
-                blade.transform.position = new Vector3(Random.Range(bc.offset.x - bc.size.x/2, bc.size.x/2), Random.Range(bc.offset.y - bc.size.y/2, bc.size.y/2), 0);
+                GameObject blade = Instantiate(wheatBladePrefab, parent);
+                blade.transform.position = new Vector3(Random.Range(bounds.x, bounds.z), Random.Range(bounds.y, bounds.w), 0);
             }
         }
     }
