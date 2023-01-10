@@ -51,7 +51,9 @@ namespace Architecture.Harvester
         private Rigidbody2D rb;
         private Animator bladeAnimation;
         private WheatFieldManager wheatCollisionScript;
+        private AudioSource harvesterMotor;
 
+        private float maxRevVelocity = 20f;
         private float horizontal;
         private float vertical;
         private float currentHazardSlowDownFactor = 1;
@@ -67,11 +69,13 @@ namespace Architecture.Harvester
             wheatCollisionScript = WheatFieldManager.GetReference();
 
             SoundSystem.Instance.PlaySound("Harvester_Motor");
+            harvesterMotor = SoundSystem.Instance.GetSoundReference("Harvester_Motor");
         }
 
         private void Update()
         {
             CheckForBladeCollision();
+            RevEngine();
         }
 
         private void FixedUpdate()
@@ -157,6 +161,13 @@ namespace Architecture.Harvester
             deathExplosionPFX.Play();
 
             HarvesterDestroyed.Invoke();
+        }
+
+        private void RevEngine()
+        {
+            //find magnetude of rb.velocity
+            float percentOfMaxVelocity = rb.velocity.sqrMagnitude / Mathf.Pow(maxRevVelocity, 2);
+            harvesterMotor.pitch = 1f + (percentOfMaxVelocity * 1.5f);
         }
 
         #region PUBLIC_INTERFACE

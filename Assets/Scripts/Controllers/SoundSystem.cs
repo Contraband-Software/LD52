@@ -34,6 +34,11 @@ namespace Architecture.Managers
             }
         }
 
+        public AudioSource GetSoundReference(string name)
+        {
+            return sfxDictionary[name];
+        }
+
         /// <summary>
         /// Plays a sound by name in the heirarchy.
         /// </summary>
