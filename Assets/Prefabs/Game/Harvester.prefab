@@ -351,7 +351,7 @@ MonoBehaviour:
   - {x: -6.5781136, y: 8.403488, z: 0}
   m_ShapePathHash: -1118046451
   m_Mesh: {fileID: 0}
-  m_InstanceId: -357738
+  m_InstanceId: -140516
 --- !u!1 &1436952086
 GameObject:
   m_ObjectHideFlags: 0
@@ -15278,7 +15278,7 @@ MonoBehaviour:
   deathExplosionPFX: {fileID: 2127743516}
   acceleration: 66
   turnSpeed: 2.73
-  penaltyTimeInSeconds: 1
+  penaltyTimeInSeconds: 2
   hazardSlowdownFactor: 0.18
   hazardEffectOnSpeed: 3
 --- !u!114 &2866240865458231737
