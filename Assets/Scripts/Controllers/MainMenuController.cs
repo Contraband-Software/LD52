@@ -71,6 +71,11 @@ namespace Architecture.Managers
             GameController.Instance.SceneLoadingOperation.allowSceneActivation = false;
         }
 
+        public void QuitGame()
+        {
+            Application.Quit();
+        }
+
         private void FadeInBlackOverlay()
         {
             blackOverlay.blocksRaycasts = true;
