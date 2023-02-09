@@ -25,7 +25,7 @@ namespace CyanCI
             process.Start();
         }
 
-        [MenuItem("CyanCI/Build Current")]
+        [MenuItem("CyanCI/Debug/Client/Build Current", priority = 2)]
         public static void BuildThis()
         {
             RunBatchCommand(
@@ -36,7 +36,7 @@ namespace CyanCI
             );
         }
 
-        [MenuItem("CyanCI/Build Last Commit")]
+        [MenuItem("CyanCI/Build Last Commit", priority = 1)]
         public static void InvokeCICommit()
         {
             RunBatchCommand(
@@ -67,7 +67,7 @@ namespace CyanCI
             );
         }
 
-        [MenuItem("CyanCI/Local/Build Current Windows Config")]
+        [MenuItem("CyanCI/Debug/Server/Build Current Windows Config", priority = 3)]
         public static void BuildWin32()
         {
             BuildPlayerOptions options = GetBuildPlayerOptions();
