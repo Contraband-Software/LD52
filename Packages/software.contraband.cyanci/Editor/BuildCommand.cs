@@ -7,29 +7,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
+#pragma warning disable IDE0079
+
 namespace CyanCI
 {
     public class BuildCommand : MonoBehaviour
     {
-        static BuildPlayerOptions GetBuildPlayerOptions(
-            bool askForLocation = false,
-            BuildPlayerOptions defaultOptions = new BuildPlayerOptions())
-        {
-            // Get static internal "GetBuildPlayerOptionsInternal" method
-#pragma warning disable S3011
-            MethodInfo method = typeof(BuildPlayerWindow.DefaultBuildMethods).GetMethod(
-                "GetBuildPlayerOptionsInternal",
-                BindingFlags.NonPublic | BindingFlags.Static
-            );
-#pragma warning restore S3011
-
-            // invoke internal method
-            return (BuildPlayerOptions)method.Invoke(
-                null,
-                new object[] { askForLocation, defaultOptions }
-            );
-        }
-
+        #region CLIENT
         private static void RunBatchCommand(string cmd)
         {
             System.Diagnostics.Process process = new System.Diagnostics.Process();
@@ -59,6 +43,27 @@ namespace CyanCI
                 "cd \"" + Application.dataPath + "\\.. \"" +
                 " && git commit --allow-empty -m \"[Build]\"" +
                 " && git push"
+            );
+        }
+        #endregion
+
+        #region SERVER_ONLY
+        static BuildPlayerOptions GetBuildPlayerOptions(
+            bool askForLocation = false,
+            BuildPlayerOptions defaultOptions = new BuildPlayerOptions())
+        {
+            // Get static internal "GetBuildPlayerOptionsInternal" method
+#pragma warning disable S3011
+            MethodInfo method = typeof(BuildPlayerWindow.DefaultBuildMethods).GetMethod(
+                "GetBuildPlayerOptionsInternal",
+                BindingFlags.NonPublic | BindingFlags.Static
+            );
+#pragma warning restore S3011
+
+            // invoke internal method
+            return (BuildPlayerOptions)method.Invoke(
+                null,
+                new object[] { askForLocation, defaultOptions }
             );
         }
 
@@ -130,5 +135,6 @@ namespace CyanCI
                 return "1";
             }
         }
+        #endregion
     }
 }
