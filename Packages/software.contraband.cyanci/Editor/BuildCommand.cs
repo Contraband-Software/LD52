@@ -30,19 +30,36 @@ namespace CyanCI
             );
         }
 
-        [MenuItem("CyanCI/Build Last Commit")]
-        public static void InvokeCICommit()
+        private static void RunBatchCommand(string cmd)
         {
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
             startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
             startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/C" + 
-                "cd \"" + Application.dataPath + "\\.. \"" + 
-                " && git commit --allow-empty -m \"[Build]\"" + 
-                " && git push";
+            startInfo.Arguments = "/C " + cmd;
             process.StartInfo = startInfo;
             process.Start();
+        }
+
+        [MenuItem("CyanCI/Build Current")]
+        public static void BuildThis()
+        {
+            RunBatchCommand(
+                "cd \"" + Application.dataPath + "\\.. \"" +
+                " && git add ." + 
+                " && git commit -m \"[Build]\"" +
+                " && git push"
+            );
+        }
+
+        [MenuItem("CyanCI/Build Last Commit")]
+        public static void InvokeCICommit()
+        {
+            RunBatchCommand(
+                "cd \"" + Application.dataPath + "\\.. \"" +
+                " && git commit --allow-empty -m \"[Build]\"" +
+                " && git push"
+            );
         }
 
         [MenuItem("CyanCI/Local/Build Current Windows Config")]
@@ -69,7 +86,7 @@ namespace CyanCI
                 Directory.CreateDirectory(buildPath);
             }
 
-            options.locationPathName = buildPath + '/' + GetNewDirectoryNumber(buildPath) + "/Windows.exe";
+            options.locationPathName = buildPath + '/' + GetNewDirectoryNumber(buildPath) + "/" + Application.productName + ".exe";
 
             var report = BuildPipeline.BuildPlayer(options);
             print("Build Result: " + report.summary.result.ToString());
