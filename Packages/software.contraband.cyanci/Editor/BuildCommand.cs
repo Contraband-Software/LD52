@@ -46,8 +46,8 @@ namespace CyanCI
         {
             RunBatchCommand(
                 "cd \"" + Application.dataPath + "\\.. \"" +
-                " && git add ." + 
-                " && git commit -m \"[Build]\"" +
+                " && git add ." +
+                " && git commit --allow-empty -m \"[Build]\"" +
                 " && git push"
             );
         }
