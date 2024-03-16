@@ -1,4 +1,4 @@
-# Our Ludum Dare 52 entry: "That Wasn't Wheat..."
+# Our [Ludum Dare 52 entry](https://ldjam.com/events/ludum-dare/52/that-wasnt-wheat): "That Wasn't Wheat..."
 
 The theme was "Harvest"
 
